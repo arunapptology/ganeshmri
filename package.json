@@ -7,8 +7,7 @@
   "scripts": {
     "dev": "next",
     "build": "next build",
-    "start": "npm run build && next start",
-    "postinstall": "prisma generate"
+    "start": "npm run build && next start"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.4.2",
