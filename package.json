@@ -2,8 +2,8 @@
   "name": "router-app",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://www.ganeshmri.com",
-  "proxy": "https://www.ganeshmri.com",
+  "homepage": "https://ganeshmri-56z17hz6a-aruns-projects.vercel.app/",
+  "proxy": "https://ganeshmri-56z17hz6a-aruns-projects.vercel.app/",
   "scripts": {
     "dev": "next",
     "build": "next build",
