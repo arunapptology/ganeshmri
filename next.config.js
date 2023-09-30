@@ -8,6 +8,9 @@ const nextConfig = {
     eslint: { 
         ignoreDuringBuilds: true
      },
+     env: {
+        BASE_URL: 'https://ganeshmri-56z17hz6a-aruns-projects.vercel.app/',
+      },
     async headers() {
         return [
             {  

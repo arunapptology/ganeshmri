@@ -30,17 +30,19 @@ const headers = () => {
 
     return (
         <>
+
+
             <header id="header" className="header">
                 <div className="wsmobileheader clearfix">
                     <a id="wsnavtoggle" className="wsanimated-arrow"><span></span></a>
                     <span className="smllogo">
-                        <img src={`${process.env.BASE_URL}/images/logo-grey.png`} width="124" height="40"
+                        <img src={`https://ganeshmri-bcaj3iz82-aruns-projects.vercel.app/images/logo-grey.png`} width="124" height="40"
                             alt="mobile-logo" /></span>
                     <a href="tel:123456789" className="callusbtn"><i className="fas fa-phone"></i></a>
                 </div>
                 <div className="headtoppart bg-blue clearfix">
                     <div className="headerwp clearfix">
-                        <marquee>PET/CT Scanner now launched at Ganesh MRI Yamuna Vihar</marquee>
+                        <marquee>PET/CT Scanner now launched at Ganesh MRI Yamuna Vihar {process.env.BASE_URL}</marquee>
                     </div>
                 </div>
                 <div className="wsmainfull menu clearfix">
