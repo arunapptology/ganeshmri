@@ -2052,6 +2052,7 @@ p.header-widget-phone {
   height: 50px;
   margin-top: 0;
   font-weight: 600;
+  border-radius: 5px !important;
 }
 
 
@@ -4039,8 +4040,8 @@ padding: 10px;
 
 
 .custom-btn{ 
-  padding: 16px;
-  border-radius: var(--size-gap-half);
+
+  border-radius: 3px;
   font-weight: 600 !important;
   background-color: #e31e25 !important;
   color: white !important;
@@ -4050,16 +4051,16 @@ padding: 10px;
 
 .custom-btn2{ 
   padding: 0px 10px !important;
-  border-radius: var(--size-gap-half);
   font-weight: 500 !important;
   background-color: #e31e25 !important;
   color: white !important;
   height: 30px;
-}
+  border-radius: 3px;
+}  
 
 .custom-btn3{ 
   padding: 0px 10px !important;
-  border-radius: var(--size-gap-half);
+  border-radius: 3px;
   font-weight: 500 !important;
   background-color: #234184  !important;
   color: white !important;

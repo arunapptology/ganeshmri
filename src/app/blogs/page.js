@@ -30,8 +30,8 @@ const page = () => {
         <div>
             <div id="breadcrumb" className="division">
                 <div className="container">
-                    <div className="row">
-                        <div className="col">
+             
+                
                             <div className=" breadcrumb-holder">
 
 
@@ -46,8 +46,7 @@ const page = () => {
                                 <h4 className="h4-sm steelblue-color">Our Blogs & Latest News</h4>
 
                             </div>
-                        </div>
-                    </div>
+                       
                 </div>
             </div>
 

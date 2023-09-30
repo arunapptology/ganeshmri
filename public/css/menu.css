@@ -679,6 +679,8 @@ video {
   width: 20%;
   right: auto;
   left: auto;
+  max-height: 400px;
+  overflow-y: scroll;
 }
 
 .wsmenu>.wsmenu-list>li>.wsmegamenu.halfdiv {

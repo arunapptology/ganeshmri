@@ -22,7 +22,7 @@ return (
 
 <div id="breadcrumb" className="division">
 					
-<div className="col">
+<div className="container">
     <div className="breadcrumb-holder">
         <nav aria-label="breadcrumb">
             <ol className="breadcrumb">
@@ -36,7 +36,7 @@ return (
         <h4 className="h4-sm steelblue-color">{blogDetail&&blogDetail.txtName}</h4>
 
     </div>
-
+ 
 
 </div>		
 </div>	

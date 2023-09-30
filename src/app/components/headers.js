@@ -152,6 +152,9 @@ alt="mobile-logo" /></span>
 
 
 
+
+  
+
 <li aria-haspopup="true"><Link href={`/department`}>Departments <span className="wsarrow"></span></Link>
 <div className="wsmegamenu clearfix halfmenu">
     <div className="container-fluid">
@@ -206,13 +209,8 @@ alt="mobile-logo" /></span>
         <div className="row">
             <ul className="col-lg-3 col-md-12 col-xs-12 link-list">
                 <li className="title">Quick Links:</li>
-                <li><a href="#">For Referring Doctors</a></li>
-                <li><a href="#">Terms & Privacy Policy</a></li>
-                <li><a href="#">Donor Privacy Policy</a></li>
-                <li><a href="#">Patient Info Sheets</a></li>
-                <li><a href="#">Online Patients Portal</a></li>
-                <li><a href="#">Insurance Information</a></li>
-                <li><a href="#">Patients Testimonials</a></li>
+                <li><Link href="/blogs"> Blogs </Link> </li>
+       
             </ul>
             <div className="col-lg-5 col-md-12 col-xs-12">
                 <h3 className="title">Featured News:</h3>
