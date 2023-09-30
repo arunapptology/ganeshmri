@@ -1086,7 +1086,7 @@ span.id-color {
 .white-color .blue-color,
 .steelblue-color .blue-color,
 .blue-color span { color: #234184; }
-
+  
 .darkblue-color,
 .darkblue-color h2, 
 .darkblue-color h3, 
@@ -1111,7 +1111,7 @@ span.id-color {
 .steelblue-color li,
 .steelblue-color i, 
 .white-color .steelblue-color,
-.steelblue-color span { color: #004861; }
+.steelblue-color span { color: #234184; }
 
 .lime-color,
 .lime-color h2, 
@@ -6652,7 +6652,7 @@ height: 50px;
   border: 1px solid #d0cfce;
   border-top: none;
   z-index: 999 !important;
-  max-height: 300px;
+  max-height: 400px;
   margin-top: -1px;
   position: absolute;
   border-radius: 0px 0px 5px 5px;
@@ -6661,6 +6661,25 @@ height: 50px;
   /* display: none; */
 
 }
+.search-result ul ul li{
+  display: inline-block;
+  border: none;
+  padding: 6px 0px;
+} 
+
+.search-result ul ul li:nth-child(2){
+  float: right;
+  font-weight: 500;
+  color: #e31e25;
+}
+
+.search-result ul ul li:nth-child(2) s{ color: #000 !important; }
+
+.search-result ul ul{
+  padding: 0;
+}
+
+.search-link a{ color: grey;}
  
 
 .search-result li{

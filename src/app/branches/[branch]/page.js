@@ -6,9 +6,11 @@ const page = ({ params }) => {
 
   const slug = params.branch;
 
+  console.log(slug);
+
   const [branchDetail, setBranchDetails] = useState(null);
 
-  const [othersBranches, setOthersBranches] = useState(null);
+  // const [othersBranches, setOthersBranches] = useState(null);
 
   const fetchBranch = async () => {
     const response = await fetch(`https://www.ganeshmri.com/admin/api/branchesdetails/${slug}`)
@@ -42,11 +44,11 @@ const page = ({ params }) => {
 
 
   const fetchBranchByCategory = async () => {
-    const res = await fetch(`https://www.ganeshmri.com/admin/api/branchAreabyId/${id}`)
-    const data1 = await res.json();
-    setOthersBranches(data1);
+    // const res = await fetch(`https://www.ganeshmri.com/admin/api/branchAreabyId`)
+    // const data1 = await res.json();
+    // setOthersBranches(data1);
   }
-
+  
   useEffect(() => {
     fetchBranch();
     fetchBranchByCategory();
@@ -54,6 +56,8 @@ const page = ({ params }) => {
 
 
   // catName
+
+
 
   return (
     <>
@@ -102,12 +106,13 @@ const page = ({ params }) => {
 
 
               <div className="txt-block pr-30">
-
+  
 
 
                 <div className="blog-post-img mb-40">
                   <img className="img-fluid"
-                    src={`${branchDetail && branchDetail.imageurl}/${branchDetail && branchDetail.txtBnrDsktp}`}
+                    src={ branchDetail && branchDetail.imageurl ?`
+                    ${branchDetail && branchDetail.imageurl}/${branchDetail && branchDetail.txtBnrDsktp}`:'dshgs'}
                     alt="blog-post-image" />
                 </div>
 
@@ -241,10 +246,6 @@ const page = ({ params }) => {
 
                 <h5 className="h5-md">Working Time</h5>
 
-                <p className="p-sm">
-                  Porta semper lacus cursus, feugiat primis ultrice ligula risus
-                  auctor at tempus feugiat dolor lacinia cursus nulla vitae massa
-                </p>
 
                 <table className="table">
                   <tbody>
@@ -273,13 +274,10 @@ const page = ({ params }) => {
 
                 <h5 className="h5-xs">Need a personal health plan?</h5>
 
-                <p className="p-sm">
-                  Porta semper lacus cursus, and feugiat primis ultrice ligula at
-                  risus auctor
-                </p>
+               
               </div>
 
-              <div className="sidebar-timetable sidebar-div mb-50">
+              {/* <div className="sidebar-timetable sidebar-div mb-50">
 
                 <h5 className="h5-md mb-20">Others locations in   {branchDetail && branchDetail.txtName} location </h5>
 
@@ -295,7 +293,7 @@ const page = ({ params }) => {
 
                 </ul>
 
-              </div>
+              </div> */}
 
 
 

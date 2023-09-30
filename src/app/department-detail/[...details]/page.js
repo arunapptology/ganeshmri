@@ -46,8 +46,8 @@ const { data: departmentData, isLoading } = useGetDepartmentDetailsQuery(param)
 
             <div id="breadcrumb" className="division">
                 <div className="container">
-                    <div className="row">
-                        <div className="col">
+             
+                      
                             <div className=" breadcrumb-holder">
                             
                                 <nav aria-label="breadcrumb">
@@ -68,8 +68,7 @@ const { data: departmentData, isLoading } = useGetDepartmentDetailsQuery(param)
                                     {departmentData&&departmentData[0].txtName}
                                 </h4>
                             </div>
-                        </div>
-                    </div>
+                  
                 
                 </div>
             

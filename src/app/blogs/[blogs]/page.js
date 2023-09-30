@@ -21,8 +21,7 @@ return (
 <>
 
 <div id="breadcrumb" className="division">
-<div className="container">
-<div className="row">						
+					
 <div className="col">
     <div className="breadcrumb-holder">
         <nav aria-label="breadcrumb">
@@ -34,11 +33,11 @@ return (
         </nav>
 
     
-        <h4 className="h4-sm steelblue-color">5 Benefits of ...</h4>
+        <h4 className="h4-sm steelblue-color">{blogDetail&&blogDetail.txtName}</h4>
 
     </div>
-</div>
-</div> 
+
+
 </div>		
 </div>	
 
