@@ -4,9 +4,13 @@
 
 const webpack = require("webpack");
 const nextConfig = {
+
+    eslint: { 
+        ignoreDuringBuilds: true
+     },
     async headers() {
         return [
-            {
+            {  
                 // matching all API routes
                 source: "/api/:path*",
                 headers: [

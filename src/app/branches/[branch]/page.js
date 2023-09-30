@@ -316,12 +316,6 @@ const page = ({ params }) => {
     </>
 
   )
-}
+} 
 
 export default page
-
-export const metadata = {
-  title: {
-    absolute: 'Blog',
-  },
-}

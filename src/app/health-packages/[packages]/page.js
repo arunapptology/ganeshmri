@@ -4,7 +4,7 @@ const page = () => {
     return (
 
         <>
-
+       
             <div id="breadcrumb" className="division">
                 <div className="container">
                     <div className="row">
@@ -69,9 +69,9 @@ const page = () => {
 </div>
 
 </div>
-
+  
         </>
     )
-}
+}  
 
 export default page

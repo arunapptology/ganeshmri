@@ -2,13 +2,13 @@
   "name": "router-app",
   "version": "0.1.0",
   "private": true,
-  "homepage":"https://www.ganeshmri.com",
+  "homepage": "https://www.ganeshmri.com",
   "proxy": "https://www.ganeshmri.com",
   "scripts": {
     "dev": "next",
     "build": "next build",
     "start": "npm run build && next start",
-    "postinstall": "echo 'It worked!'"
+    "postinstall": "prisma generate"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.4.2",
@@ -19,6 +19,7 @@
     "axios": "^1.5.0",
     "cors": "^2.8.5",
     "jquery": "^3.7.1",
+    "lint": "^0.8.19",
     "moment": "^2.29.4",
     "next": "13.4.19",
     "next-seo": "^6.1.0",

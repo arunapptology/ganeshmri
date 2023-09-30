@@ -1,12 +1,6 @@
 "use client" ;
 import React, { useState , useEffect } from 'react'
 
-
-
-
-
-
-
 const page = ({params}) => {
 
 const slug = params.blogs;
@@ -187,4 +181,4 @@ return (
 )
 }
 
-export default page
+export default page  

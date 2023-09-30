@@ -70,9 +70,9 @@ const cardboard = () => {
                 
             </div>
         </div>
-       
+        
         )
-    })
+    })  
 
 
 

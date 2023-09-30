@@ -1,9 +1,8 @@
 "use client"
 import Link from 'next/link';
 import React, { useEffect, useState } from 'react'
-
-import moment from 'moment'
-
+  
+  
 const page = () => {
 
     const [blogs, setBlogs] = useState(null);
@@ -246,34 +245,9 @@ const page = () => {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
         </div>
     )
 }
 
 export default page
 
-
-export function generateMetadata() {
-    return {
-        title: '4t432lhth43t 4th34itds vndfsbvdfn dfbdfnk',
-        description: "qwrfnqwefef",
-    }
-}
-
-  
-export const metadata = {
-    title: {
-      absolute: 'About',
-    },
-  }

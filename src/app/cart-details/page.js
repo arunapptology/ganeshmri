@@ -3,9 +3,8 @@ import React from 'react'
 const page = () => {
     return (
 
-        <>
-
-
+        <>  
+  
             <div id="breadcrumb" className="division">
                 <div className="container">
                     <div className="row">
