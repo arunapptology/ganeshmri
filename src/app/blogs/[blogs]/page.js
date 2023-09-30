@@ -16,9 +16,8 @@ setBlogDetails(data);
 useEffect(() => {
 fetchBlogs()
 }, [])
-
-
-return (
+  
+return ( 
 <>
 
 <div id="breadcrumb" className="division">

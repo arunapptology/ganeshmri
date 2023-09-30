@@ -89,9 +89,3 @@ const page = () => {
 }
 
 export default page
-
-
-export const metadata = {
-    title: 'Our Health Checkup Packages',
-    description: 'Our Health Checkup Packages',
-  }

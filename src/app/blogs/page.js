@@ -25,7 +25,7 @@ const page = () => {
     const regex = /(<([^>]+)>)/gi
 
 
-
+   
     return (
         <div>
             <div id="breadcrumb" className="division">

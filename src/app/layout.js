@@ -39,12 +39,12 @@ const corsOptions ={
    optionSuccessStatus:200,
 }
 
-// export const metadata = {
-// 	title: {
-// 	  template: '%s | Builder.io',
-// 	  default: 'Builder.io - Visual Headless CMS',
-// 	},
-//   }
+export const metadata = {
+	title: {
+	  template: '%s | Builder.io',
+	  default: 'Builder.io - Visual Headless CMS',
+	},
+  }
 
 export default function RootLayout({ children }) {
 

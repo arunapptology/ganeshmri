@@ -6,12 +6,9 @@ const page = ({ params }) => {
 
   const slug = params.branch;
 
-
   const [branchDetail, setBranchDetails] = useState(null);
 
   const [othersBranches, setOthersBranches] = useState(null);
-
-  const id = 2;
 
   const fetchBranch = async () => {
     const response = await fetch(`https://www.ganeshmri.com/admin/api/branchesdetails/${slug}`)
