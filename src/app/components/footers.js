@@ -89,14 +89,15 @@ get to the correct diagnosis and initiate an appropriate treatment plan.
 						<div className="col-md-6 col-lg-2">
 							<div className="footer-links mb-40">
 
-								<h5 className="h5-xs">About Clinic</h5>
+								<h5 className="h5-xs">Quick Links</h5>
 
 								<ul className="foo-links clearfix">
-									<li><a href="#">About Clinic</a></li>
-									<li><a href="#">Careers</a></li>
-									<li><a href="#">Press & Media</a></li>
-									<li><a href="#">Our Blog</a></li>
-									<li><a href="#">Advertising</a></li>
+								<li><Link href="/blogs"> Blogs </Link> </li>
+                <li><Link href="/about"> About us </Link> </li>
+                <li><Link href="/contact-us"> Contact us </Link> </li>
+                <li><Link href="/health-packages"> health package </Link> </li>
+                <li><a href="http://182.75.60.195/Download/PatientLogin.aspx"> Online Report </a> </li>
+                <li><Link href="/doctors"> Talk to doctors </Link> </li>
 								</ul>
 							</div>
 						</div>

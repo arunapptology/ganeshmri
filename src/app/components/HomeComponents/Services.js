@@ -5,11 +5,11 @@ import Link from 'next/link';
 import dynamic from "next/dynamic";
 import { useDispatch , useSelector } from 'react-redux';
 
+import { useGetPackageResultQuery } from '@/app/redux/services/postApis';
+
 if (typeof window !== "undefined") {
 	window.$ = window.jQuery = require("jquery");
 }
-
-
 
 import { addcart } from '@/app/redux/cartSlice';
 
@@ -23,8 +23,6 @@ const OwlCarousel2 = dynamic(() => import("react-owl-carousel"), {
 	ssr: false,
 });
 
-
-import { getPackagesData } from '@/app/redux/packagesSlice';
 
 
 const options = {
@@ -55,13 +53,9 @@ const options = {
 
 const Services = () => {
 
-		
+	const { data: packagesData } = useGetPackageResultQuery(1000);
+	
 	const dispatch = useDispatch();
-
-	const packagesData = useSelector((state)=>{
-		return state.package.packages;
-	   });
-
 
 
 	   const totalitem = useSelector((state)=>{
@@ -72,22 +66,10 @@ const Services = () => {
 
 	const handleAddCart = (product) => {
 		dispatch(addcart(product))
-	
 		toast.success(`Add to cart`);
 	}
 
 	
-	const handleBlog = () =>{
-
-		dispatch(getPackagesData())
-	}
-
-
-	useEffect(() => {
-		handleBlog()
-
-	}, [])
-
 		
 		const packs = packagesData && packagesData.map((items, i) => {
 			return (

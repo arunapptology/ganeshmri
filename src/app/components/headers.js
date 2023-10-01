@@ -5,7 +5,12 @@ import { useSelector } from 'react-redux';
 import dynamic from 'next/dynamic'
 import Loading from '../Loading';
 
-import { useGetCategoryDataQuery, useGetBranchesDataQuery } from '../redux/services/postApis';
+import { 
+    useGetCategoryDataQuery, 
+    useGetBranchesDataQuery , 
+    useGetBlogResultQuery,
+    useGetPackageResultQuery 
+} from '../redux/services/postApis';
 
 
 const SearchComponent = dynamic(() => import('./SearchComponent'), {
@@ -24,6 +29,15 @@ const categoryData = catData ?? catData;
 // branches data
 const { data: branchData } = useGetBranchesDataQuery();
 const branchesData = branchData ?? branchData;
+
+
+
+const { data: blogData } = useGetBlogResultQuery();
+
+const { data: packageData } = useGetPackageResultQuery(1);
+
+
+
 
 // cart data
 const item = useSelector((state) => state);
@@ -54,9 +68,9 @@ alt="mobile-logo" /></span>
         alt="header-logo" />
 </a></div>
 <div className='col-md-6'>
-    <div class="mx-auto custom-search">
+    <div className="mx-auto custom-search">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,200,0,0" />
-        <form class="search-container" autocomplete="off">
+        <form className="search-container" autoComplete="off">
 
             <SearchComponent />
 
@@ -67,23 +81,23 @@ alt="mobile-logo" /></span>
 <div className='col-md-4 right-head-sec'>
     <ul>
         <li>
-            <Link href={`/dactors`}><button class="btn custom-btn3">Talk to doctor </button></Link>
+            <Link href={`/dactors`}><button className="btn custom-btn3">Talk to doctor </button></Link>
         </li>
-        <li class="y5khq1DT"><a class="R0yMSq_u _uPYWdBx" data-test-selector="pageheader-user-auth-link" href="/sign-in">
+        <li className="y5khq1DT"><a className="R0yMSq_u _uPYWdBx" data-test-selector="pageheader-user-auth-link" href="/sign-in">
             <img src={`${process.env.BASE_URL}/images/user.png`} />
             <span className='text-login'>Sign In</span>
         </a></li>
         <li className='cart-wrap'>
-            <div class="menu-wrap">
-                <ul class="menu">
-                    <li class="menu-item">
-                        <text class="cart-active">
+            <div className="menu-wrap">
+                <ul className="menu">
+                    <li className="menu-item">
+                        <text className="cart-active">
                             <img src={`${process.env.BASE_URL}/images/shopping-cart.png`} />
-                            <span class="count-style"> {item.carts.CartItems.length ? item.carts.CartItems.length : 0} Items</span>
+                            <span className="count-style"> {item.carts.CartItems.length ? item.carts.CartItems.length : 0} Items</span>
                         </text>
-                        <ul class="drop-menu cart-list-ul ">
-                            <li class="drop-menu-item">
-                                <table class="table table-image">
+                        <ul className="drop-menu cart-list-ul ">
+                            <li className="drop-menu-item">
+                                <table className="table table-image">
                                     {
                                         item.carts.CartItems.length > 0 ?
                                             <thead>
@@ -101,7 +115,7 @@ alt="mobile-logo" /></span>
                                             item.carts.CartItems ?
                                                 item.carts.CartItems.map((items, i) => (
                                                     <tr>
-                                                        <td class="w-25">
+                                                        <td className="w-25">
                                                             <img
                                                                 className="card-img mx-auto d-block"
                                                                 src={`${items.imgthumburl}/${items.txtBnrDsktp}`}
@@ -149,11 +163,6 @@ alt="mobile-logo" /></span>
 <li><Link href={`/`}> Home </Link> </li>
 <li aria-haspopup="true"><Link href="/about">About </Link></li>
 <li><Link href="/health-packages"> Health Packages </Link> </li>
-
-
-
-
-  
 
 <li aria-haspopup="true"><Link href={`/department`}>Departments <span className="wsarrow"></span></Link>
 <div className="wsmegamenu clearfix halfmenu">
@@ -210,49 +219,52 @@ alt="mobile-logo" /></span>
             <ul className="col-lg-3 col-md-12 col-xs-12 link-list">
                 <li className="title">Quick Links:</li>
                 <li><Link href="/blogs"> Blogs </Link> </li>
+                <li><Link href="/about"> About us </Link> </li>
+                <li><Link href="/contact-us"> Contact us </Link> </li>
+                <li><Link href="/health-packages"> health package </Link> </li>
+                <li><a href="http://182.75.60.195/Download/PatientLogin.aspx"> Online Report </a> </li>
+                <li><Link href="/doctors"> Talk to doctors </Link> </li>
+              
        
             </ul>
             <div className="col-lg-5 col-md-12 col-xs-12">
                 <h3 className="title">Featured News:</h3>
-                <div className="fluid-width-video-wrapper"><img
-                    src="images/blog/featured-news.jpg" alt="featured-news" /></div>
-                <h5 className="h5-xs"><a href="#">5 Benefits of integrative medicine</a>
-                </h5>
-                <p className="wsmwnutxt">Porta semper lacus cursus, feugiat primis ultrice
-                    in ligula risus auctor
-                    tempus feugiat dolor impedit magna purus at pretium gravida donec
-                </p>
+{
+    packageData&&packageData.map((item , i)=>(
+<>
+                <div key={i} className="fluid-width-video-wrapper"><img
+                    src={`${item.imageurl}/${item.txtBnrDsktp}`} alt="featured-news" />
+                    </div>
+                <h4 className="h5-xs"><a href="#">{packageData.txtName}</a>
+                </h4>
+               
+
+</>
+
+    ))
+}
+
             </div>
             <div className="col-lg-4 col-md-12 col-xs-12">
                 <h3 className="title">Latest News:</h3>
                 <ul className="latest-news">
-                    <li className="clearfix d-flex align-items-center">
-                        <img className="img-fluid" src="images/blog/latest-post-1.jpg"
-                            alt="blog-post-preview" />
-                        <div className="post-summary">
-                            <a href="single-post.html">Etiam sapien risus ante auctor
-                                tempus accumsan an empor ...</a>
-                            <p>43 Comments</p>
-                        </div>
-                    </li>
-                    <li className="clearfix d-flex align-items-center">
-                        <img className="img-fluid" src="images/blog/latest-post-2.jpg"
-                            alt="blog-post-preview" />
-                        <div className="post-summary">
-                            <a href="single-post.html">Blandit tempor a sapien ipsum,
-                                porta risus auctor justo ...</a>
-                            <p>38 Comments</p>
-                        </div>
-                    </li>
-                    <li className="clearfix d-flex align-items-center">
-                        <img className="img-fluid" src="images/blog/latest-post-3.jpg"
-                            alt="blog-post-preview" />
-                        <div className="post-summary">
-                            <a href="single-post.html">Cursus risus auctor tempus risus
-                                laoreet turpis auctor varius ...</a>
-                            <p>29 Comments</p>
-                        </div>
-                    </li>
+
+                    {
+
+blogData&&blogData.map((item , i)=>(
+
+    <li className="clearfix d-flex align-items-center">
+    <img className="img-fluid" src={`${item.imgthumburl}/${item.txtBnrDsktp}`}
+        alt="blog-post-preview" />
+    <div className="post-summary">
+        <Link href={`/blogs/${item.txtURL}`}>{item.txtName}</Link>
+        <div dangerouslySetInnerHTML={{ __html: item.txtDescription.slice(0,50) }}></div>
+    </div>
+</li>
+
+))
+                    }
+
                 </ul>
             </div>
         </div>

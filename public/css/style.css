@@ -99,8 +99,10 @@
 }
 
 
+.desktoplogo .right-head-sec{ float: right;}
+
 .right-head-sec ul{
- 
+  float: inherit;
 }
 
 .text-login{
@@ -2071,6 +2073,13 @@ p.header-widget-phone {
   font-size: 14px;
   font-weight: 300;
   margin-bottom: 20px;
+}
+.error{
+  color: #e74c3c;
+  font-size: 14px;
+  font-weight: 300;
+  margin-bottom: 20px;
+  text-align: left;
 }
 
 .hero-form-msg {
@@ -5582,12 +5591,17 @@ ul.blog-category-list li:hover {
 #breadcrumb {
   background-image: url(../images/breadcrumb.jpg);
   background-position: center center;
+  background-size: cover
 }
 
 .breadcrumb-holder {
   padding-top: 40px;
   padding-bottom: 45px;
   padding-left: 15px;
+}
+
+.breadcrumb-holder h4{
+  color: white;
 }
 
 .breadcrumb {
@@ -5607,21 +5621,22 @@ ul.blog-category-list li:hover {
   letter-spacing: 0;
   margin-top: 10px;
   margin-bottom: 0;
+  padding: 0px 15px;
 }
 
 .breadcrumb-item a {
-  color: #333;
+  color: #ffffff;
   font-size: 0.95rem;
   font-weight: 400;
   text-decoration: underline;
 }
 
 .breadcrumb-item a:hover {
-  color: #234184;
+  color: #cacaca;
 }
 
 .breadcrumb-item.active {
-  color: #666;
+  color: #e31e25 !important;
   font-size: 0.95rem;
   font-weight: 400;
   margin-top: 2px;
@@ -6515,8 +6530,8 @@ a{
 
 .bookexclusive .books {
   padding: 10px 82px;
-  background-color: #f16948;
-  border-color: #f16948;
+  background-color: #dc3545;
+  border-color: #dc3545;
 }
 .head-tag h5{
  height: 50px;
@@ -6898,7 +6913,7 @@ font-weight: 500;
   }
 
   .font-bold{
-    font-weight: 500 !important;
+    font-weight: 600 !important;
   }
 
   .form-box{
@@ -6932,3 +6947,23 @@ font-weight: 500;
   p{
     font-family: 'Nunito Sans', sans-serif;
   }
+
+  .custom-white{
+    color: white;
+  }
+  .custom-black{
+    color: black;
+  }
+
+  .sidebar-div h5{
+    background: #234184;
+    color: white;
+    padding: 10px;
+  }
+
+ .contact-detail {
+    background: #2341840d;
+    padding: 10px;
+    box-shadow: 0px 0px 10px #2341843d;
+}
+  

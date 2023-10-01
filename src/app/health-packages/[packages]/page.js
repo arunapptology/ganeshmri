@@ -6,8 +6,7 @@ const page = () => {
         <>
             <div id="breadcrumb" className="division">
                 <div className="container">
-                    <div className="row">
-                        <div className="col">
+                  
                             <div className=" breadcrumb-holder">
                                 <nav aria-label="breadcrumb">
                                     <ol className="breadcrumb">
@@ -21,8 +20,7 @@ const page = () => {
                                 <h4 className="h4-sm steelblue-color">Health Packages list</h4>
 
                             </div>
-                        </div>
-                    </div>
+                        
                 </div>
             </div>
 

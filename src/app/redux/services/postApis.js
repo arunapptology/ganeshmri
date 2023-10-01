@@ -28,6 +28,19 @@ export const postApis =  createApi({
                 query: (slug) => `departmentDetail/${slug}`,
                 }),
 
+    getSearchResult: builder.query({
+        query: (slug) => `searchList/${slug}`,
+        }),
+
+
+    getBlogResult: builder.query({
+        query: () => `blogs`,
+        }),
+        
+
+    getPackageResult: builder.query({
+        query: (slug) => `packages/${slug}`,
+        }),
 
             
 
@@ -42,5 +55,8 @@ export const {
     useGetCategoryDataQuery ,
      useGetBranchesDataQuery,
      useGetDepartmentDataQuery,
-     useGetDepartmentDetailsQuery
+     useGetDepartmentDetailsQuery,
+     useGetSearchResultQuery,
+     useGetBlogResultQuery,
+     useGetPackageResultQuery
     } = postApis;

@@ -19,11 +19,11 @@ const page = () => {
 								<nav aria-label="breadcrumb">
 									<ol className="breadcrumb">
 										<li className="breadcrumb-item"><a href="index.html">Home</a></li>
-										<li className="breadcrumb-item"><a href="all-doctors.html">Our Doctors</a></li>
-										<li className="breadcrumb-item active" aria-current="page">Doctor Page</li>
+										
+										<li className="breadcrumb-item active" aria-current="page">Doctor</li>
 									</ol>
 								</nav>
-								<h4 className="h4-sm steelblue-color"></h4>
+								<h4 className="h4-sm steelblue-color">Doctors</h4>
 							</div>
 						</div>
 					</div>

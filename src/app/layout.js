@@ -93,12 +93,12 @@ export default function RootLayout({ children }) {
 	<Script src={`${process.env.BASE_URL}js/jquery.magnific-popup.min.js`}></Script>
 	<Script src={`${process.env.BASE_URL}js/imagesloaded.pkgd.min.js`}></Script>
 	<Script src={`${process.env.BASE_URL}js/isotope.pkgd.min.js`}></Script>
-	<Script src={`${process.env.BASE_URL}js/hero-form.js`}></Script>
+	{/* <Script src={`${process.env.BASE_URL}js/hero-form.js`}></Script> */}
 
 
-	
-	<Script src={`${process.env.BASE_URL}js/contact-form.js`}></Script>
-	<Script src={`${process.env.BASE_URL}js/comment-form.js`}></Script>
+{/* 	
+	<Script src={`${process.env.BASE_URL}js/contact-form.js`}></Script> */}
+	{/* <Script src={`${process.env.BASE_URL}js/comment-form.js`}></Script> */}
 	<Script src={`${process.env.BASE_URL}js/appointment-form.js`}></Script>
 	<Script src={`${process.env.BASE_URL}js/jquery.datetimepicker.full.js`}></Script>
 	<Script src={`${process.env.BASE_URL}js/jquery.validate.min.js`}></Script>

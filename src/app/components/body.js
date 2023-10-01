@@ -11,6 +11,8 @@ import Loading from '../Loading';
 
 import  { getBlogData } from '../redux/blogSlice';
 
+import Contactform from './contactform';
+
 
 const Services = dynamic(() => import('./HomeComponents/Services'), {
 	ssr: false,
@@ -54,11 +56,6 @@ const body = () => {
 	const [banner, setBanner] = useState(null);
 
 
-	const [username, setUsername] = useState('');
-	const [mobile, setMobile] = useState('');
-	const [comment, setComment] = useState('');
-
-	const [message, setMessage] = useState('');
 
 
 	const fetchTestimonial = async () => {
@@ -81,22 +78,6 @@ const body = () => {
 	
 	}
 
-	// =====--contact api form --==== //
-	const handleContactrForm = async (e) => {
-		e.preventDefault()
-		const res = await fetch('https://www.ganeshmri.com/admin/api/contactusform', {
-			method: 'POST',
-			headers: {
-				'Content-Type': 'application/json',
-			},
-			body: JSON.stringify({ username, mobile, comment }),
-		})
-
-		const data = await res.json()
-		if (data) {
-			setMessage("Data Submitted successfully");
-		}
-	}
 
 
  
@@ -164,57 +145,10 @@ const body = () => {
 
 
 						<div className="col-lg-4 col-xl-4 banner-right-sec">
-							<div id="hero-section-form" className="text-center  bg-white ">
-								<div className="col-md-12 custom-form">
-									<h4 className="h4-xs">Request a call back</h4>
-								</div>
-
-								<div method='post'
-									className="mb-40 hero-form"
 
 
-								>
-									<div id="input-name" className="col-lg-12">
-										<input type="text"
-											onChange={(e) => setUsername(e.target.value)}
-											name="name"
-											className="form-control name"
-											placeholder="Enter Your Name*" required="" />
-									</div>
+<Contactform />
 
-
-
-									<div id="input-phone" className="col-lg-12">
-										<input type="tel" name="phone"
-											onChange={(e) => setMobile(e.target.value)}
-											className="form-control phone"
-											placeholder="Enter Your Phone Number*" required="" />
-									</div>
-
-
-									<div id="input-comment" className="col-lg-12">
-										<textarea type="tel" name="comment"
-											onChange={(e) => setComment(e.target.value)}
-											className="form-control comment"
-											placeholder="Enter Your comment*" required="" />
-									</div>
-
-
-
-									<div className="col-lg-12 form-btn">
-										<button
-											onClick={handleContactrForm}
-											className="btn custom-btn tra-white-hover ">
-											Send Your Message
-										</button>
-									</div>
-
-									<div className="col-lg-12 hero-form-msg text-center">
-										<div className="sending-msg"><span className="loading">{message && message}</span></div>
-									</div>
-
-								</div>
-							</div>
 						</div>
 
 
@@ -254,7 +188,7 @@ const body = () => {
 									</div>
 									<div className="col-sm-6 col-lg-3">
 
-										<Link href={`https://www.google.com/maps/dir//CS%2FOCF-7,+Pocket+3,+Sector+8,+Rohini,+New+Delhi,+Delhi,+110085/@28.7011754,77.0406494,12z/data=!4m8!4m7!1m0!1m5!1m1!1s0x390d03aeed6a6a09:0x6a5894628e7ffd25!2m2!1d77.1230508!2d28.7012004?entry=ttu`}>
+										<Link href={`/department/`}>
 										<div className="sbox-1 icon-md wow fadeInUp" data-wow-delay="0.6s">
 
 											<span className="flaticon-076-microscope blue-color"></span>

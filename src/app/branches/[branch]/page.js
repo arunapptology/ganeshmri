@@ -6,7 +6,6 @@ const page = ({ params }) => {
 
   const slug = params.branch;
 
-  console.log(slug);
 
   const [branchDetail, setBranchDetails] = useState(null);
 
@@ -43,27 +42,27 @@ const page = ({ params }) => {
 
 
 
-  const fetchBranchByCategory = async () => {
-    // const res = await fetch(`https://www.ganeshmri.com/admin/api/branchAreabyId`)
-    // const data1 = await res.json();
-    // setOthersBranches(data1);
-  }
   
   useEffect(() => {
     fetchBranch();
-    fetchBranchByCategory();
+
   }, [])
 
+  let imageUrl = `${branchDetail && branchDetail.imageurl}/${branchDetail && branchDetail.txtBnrDsktp}`;
+  
+  const styling = {
+    backgroundImage:`url('${imageUrl}')`,
+    width:"100%",
+    height:"100%",
 
-  // catName
+    backgroundSize: 'cover',
 
+  }
 
-
-  return (
+  return ( 
     <>
+      <div  style={styling} >
 
-
-      <div id="breadcrumb" className="division">
         <div className="container">
           <div className="row">
             <div className="col">
@@ -83,7 +82,7 @@ const page = ({ params }) => {
                   </ol>
                 </nav>
 
-                <h4 className="h4-sm steelblue-color">{branchDetail && branchDetail.txtName}</h4>
+                <h4 className="h4-sm steelblue-color custom-white">{branchDetail && branchDetail.txtName}</h4>
               </div>
             </div>
           </div>
@@ -96,7 +95,7 @@ const page = ({ params }) => {
 
       <div
         id="department-page"
-        className="wide-60 department-page-section division"
+        className="wide-custom department-page-section division"
       >
         <div className="container">
           <div className="row">
@@ -107,14 +106,6 @@ const page = ({ params }) => {
 
               <div className="txt-block pr-30">
   
-
-
-                <div className="blog-post-img mb-40">
-                  <img className="img-fluid"
-                    src={ branchDetail && branchDetail.imageurl ?`
-                    ${branchDetail && branchDetail.imageurl}/${branchDetail && branchDetail.txtBnrDsktp}`:'dshgs'}
-                    alt="blog-post-image" />
-                </div>
 
                 <div className="content-block mb-40">
 

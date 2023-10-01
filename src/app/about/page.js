@@ -46,7 +46,7 @@ const page = () => {
 			</div>
 
 
-			<section id="info-4" className="wide-100 info-section division">
+			<section id="info-4" className="wide-custom info-section division">
 				<div className="container">
 
 
@@ -100,10 +100,7 @@ const page = () => {
 								<h4 className="h4-xs">Opening Hours:</h4>
 
 
-								<p className="p-sm">Porta semper lacus cursus and feugiat primis ultrice ligula risus auctor
-									tempus feugiat and dolor lacinia cursus
-								</p>
-
+							
 
 								<table className="table">
 									<tbody>
@@ -133,8 +130,7 @@ const page = () => {
 								<h5 className="h5-sm">Need a personal health plan?</h5>
 
 
-								<p className="p-sm">Porta semper lacus cursus, and feugiat primis ultrice ligula at risus auctor</p>
-
+								
 							</div>
 						</div>
 

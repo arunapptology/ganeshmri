@@ -6,14 +6,14 @@ const cardboard = () => {
     
     const [packages, setPackages] = useState('');
 
+    const limit = 1000 ;
 
 	const fetchPackages = async () => {
-		const response = await fetch('https://www.ganeshmri.com/admin/api/packages')
+		const response = await fetch(`https://www.ganeshmri.com/admin/api/packages/${limit}`)
 		const data = await response.json();
 		setPackages(data);
 	}
    
-
     useEffect(() => {
 
 		fetchPackages()
