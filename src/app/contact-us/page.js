@@ -19,7 +19,7 @@ const page = () => {
     <div className="row">
       <div className="col">
         <div className=" breadcrumb-holder">
-          {/* Breadcrumb Nav */}
+
           <nav aria-label="breadcrumb">
             <ol className="breadcrumb">
               <li className="breadcrumb-item">
@@ -30,21 +30,21 @@ const page = () => {
               </li>
             </ol>
           </nav>
-          {/* Title */}
+   
           <h4 className="h4-sm steelblue-color">Contact Us</h4>
         </div>
       </div>
-    </div>{" "}
-    {/* End row */}
-  </div>{" "}
-  {/* End container */}
+    </div>
+
+  </div>
+
 </div>
 
 
 <section id="contacts-2" className="wide-custom contacts-section division">
   <div className="container">
     <div className="row">
-      {/* CONTACTS INFO */}
+
       <div className="col-lg-8">
       
         <h4 className="h4-md steelblue-color">
@@ -77,17 +77,16 @@ referrerpolicy="no-referrer-when-downgrade">
 
         <DynamicBranches />
     
-      </div>{" "}
-      {/* END CONTACTS INFO */}
-      {/* CONTACT FORM */}
+      </div>
+
       <div className="col-lg-4">
     
     <div className='contact-detail'>
 
-      <div id="txt-widget" class="sidebar-div mb-50"><h5 class="h5-sm steelblue-color">Location </h5>
-      <div class="txt-widget-unit mb-15 clearfix d-flex align-items-center"><div class="">
-        <div class="con-md-12"> 
-         <div class="text">
+      <div id="txt-widget" className="sidebar-div mb-50"><h5 className="h5-sm steelblue-color">Location </h5>
+      <div className="txt-widget-unit mb-15 clearfix d-flex align-items-center"><div className="">
+        <div className="con-md-12"> 
+         <div className="text">
           
           <p><b>Address : </b>109, Pocket A-1, Near Deepali Chowk, Sector 08, Rohini, New Delhi 110085</p>
 
@@ -113,15 +112,15 @@ referrerpolicy="no-referrer-when-downgrade">
 
          </div>
 
-
-<br></br>
+    
+<br />
     <Contactform/>
-      </div>{" "}
-      {/* END CONTACT FORM */}
-    </div>{" "}
-    {/* End row */}
-  </div>{" "}
-  {/* End container */}
+      </div>
+
+    </div>
+
+  </div>
+
 </section>
 <section className="bg-fixed banner-section division">
 </section>
