@@ -2,6 +2,8 @@
 import React, { useEffect, useState } from 'react'
 import { useDispatch , useSelector } from 'react-redux';
 
+import Popup from './popup';
+
 import Link from 'next/link';
 
 
@@ -130,6 +132,13 @@ const body = () => {
 			<title>Ganesh MRI</title>
 			<meta name="description" content="ewgfweg,ew gkjw we mgweg" />
 			<link rel="canonical" href="wiqhfiowqhfewf" ></link>
+
+
+
+
+
+
+
 			<section id="hero-4" className="bg-fixed hero-section division" style={{ height: "450px" }}>
 				<div className="container">
 					<div className="row d-flex align-items-center home-banner-sec">
@@ -246,7 +255,7 @@ const body = () => {
 
 
 
-
+ <Popup />
 
 
 
