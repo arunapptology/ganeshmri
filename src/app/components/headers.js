@@ -1,9 +1,11 @@
 "use client";
 import React, { useEffect, useState } from 'react'
 import Link from 'next/link'
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import dynamic from 'next/dynamic'
 import Loading from '../Loading';
+
+import { removeCart } from '../redux/cartSlice';
 
 import { 
     useGetCategoryDataQuery, 
@@ -21,6 +23,19 @@ loading: () => <Loading />,
 
 
 const headers = () => {
+
+const dispatch = useDispatch();
+
+
+    
+
+
+const handleRemove = (id)=>{
+    dispatch(removeCart(id))
+}
+
+
+
 
 // category data
 const { data: catData } = useGetCategoryDataQuery();
@@ -42,6 +57,8 @@ const { data: packageData } = useGetPackageResultQuery(1);
 // cart data
 const item = useSelector((state) => state);
 
+
+  
 return (
 <>
 
@@ -111,10 +128,10 @@ alt="mobile-logo" /></span>
                                             : null
                                     }
                                     <tbody>
-                                        {
+                                        {   
                                             item.carts.CartItems ?
                                                 item.carts.CartItems.map((items, i) => (
-                                                    <tr>
+                                                    <tr key={i}>
                                                         <td className="w-25">
                                                             <img
                                                                 className="card-img mx-auto d-block"
@@ -125,8 +142,11 @@ alt="mobile-logo" /></span>
                                                         <td>{items.txtName.slice(0, 60)}</td>
                                                         <td><b> &#x20B9;{items.txtDiscountedPrice}</b></td>
                                                         <td>
-                                                            <img src={`${process.env.BASE_URL}/images/icons/trash.png`} />
-                                                            <img src={`${process.env.BASE_URL}/images/user.png`} />
+                                                        <img onClick={handleRemove(items.id)} 
+                                                        className='icon' 
+                                                        src={`${process.env.BASE_URL}/images/icons/trash.png`} 
+                                                        />
+                                                          
                                                         </td>
                                                     </tr>
                                                 ))
@@ -253,7 +273,7 @@ alt="mobile-logo" /></span>
 
 blogData&&blogData.map((item , i)=>(
 
-    <li className="clearfix d-flex align-items-center">
+    <li key={i} className="clearfix d-flex align-items-center">
     <img className="img-fluid" src={`${item.imgthumburl}/${item.txtBnrDsktp}`}
         alt="blog-post-preview" />
     <div className="post-summary">

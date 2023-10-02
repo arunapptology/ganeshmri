@@ -15,6 +15,10 @@ export const postApis =  createApi({
         getCategoryData: builder.query({
           query: () => `category`,
             }),
+  
+            getCategoryLimitData: builder.query({
+                query: (limit) => `categorybylimit/${limit}`,
+                  }),
 
         getBranchesData: builder.query({
             query: () => `branches`,
@@ -58,5 +62,6 @@ export const {
      useGetDepartmentDetailsQuery,
      useGetSearchResultQuery,
      useGetBlogResultQuery,
-     useGetPackageResultQuery
+     useGetPackageResultQuery,
+     useGetCategoryLimitDataQuery
     } = postApis;

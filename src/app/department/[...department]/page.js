@@ -183,7 +183,7 @@ const param =  params.department;
                               <strong> &#x20B9;{item.discountedPrice ? item.discountedPrice : null} </strong>
                             </td>
                             <td>
-                              <Link href={`/department-details/${item.txtURL}`}>
+                              <Link href={`/department-detail/${item.txtURL}`}>
                                 <button className='btn btn-sm custom-btn'> Book Now</button>
                               </Link>
                             </td>

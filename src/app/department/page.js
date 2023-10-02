@@ -1,18 +1,69 @@
 "use client"
 import React, { useEffect, useState } from 'react'
 import Link from 'next/link';
-import { useGetCategoryDataQuery } from '../redux/services/postApis';
-import Loading from '../Loading';
+
+
 
 import Contactform from '../components/contactform';
 
-const page = () => {
-  const { data, error, isLoading } = useGetCategoryDataQuery('')
+import Departmentpage from './departmentpage';
 
+const page = () => {
+  
+  const [card, setCard] = useState([]);
+  const [page, setPage] = useState(1);
+  const [loading, setLoading] = useState(true);
+
+  let limit = page*9;
+
+ 
+  const getCardData = async () => {
+      const res = await fetch(
+        `https://www.ganeshmri.com/admin/api/categorybylimit/${limit}/${page}`
+      );
+      const data = await res.json();
+      console.log(data);
+
+
+
+      setCard((prev) => [...prev, ...data]);
+      setLoading(false);
+    };
+    
+    useEffect(() => {
+      getCardData();
+    }, [page]);
+  
+    const handelInfiniteScroll = async () => {
+      // console.log("scrollHeight" + document.documentElement.scrollHeight);
+      // console.log("innerHeight" + window.innerHeight);
+      // console.log("scrollTop" + document.documentElement.scrollTop);
+
+      let scrollTop = document.documentElement.scrollTop;
+      let innerhight = window.innerHeight;
+      let scrollHeight =  document.documentElement.scrollHeight
+
+      try {
+        if (
+          innerhight + scrollTop + 1 >= scrollHeight-400
+         
+        ) {
+          setLoading(true);
+          setPage((prev) => prev + 1);
+        }
+      } catch (error) {
+        console.log(error);
+      }
+    };
+  
+    useEffect(() => {
+      
+      window.addEventListener("scroll", handelInfiniteScroll);
+      return () => window.removeEventListener("scroll", handelInfiniteScroll);
+    }, []);
+  
   return (
     <>
-
-
       <div id="breadcrumb" className="division">
         <div className="container">
        
@@ -25,7 +76,7 @@ const page = () => {
                     <li className="breadcrumb-item active" aria-current="page">Department</li>
                   </ol>
                 </nav>
-
+  
 
                 <h4 className="h4-sm steelblue-color">Departments</h4>
 
@@ -57,44 +108,9 @@ const page = () => {
             <div className="row">
               <div className="col-md-9 text-center">
                 <div className='row'>
-                  {isLoading ? <Loading /> :
-                    data && data.map((items) => (
-                      <div className="col-md-6 col-lg-4">
-                        <div className="doctor-1">
-                          <div className="hover-overlay text-center">
-                            <img
-                              className="img-fluid"
-                              
-                              src={`https://www.sanbio.nl/media/catalog/product/placeholder/default/placeholder-image-600p.webp`}
-                              alt={items.txtImageAltTag}
-                            />
-                            <div className="item-overlay" />
-                            <div className="profile-link">
-                              <Link
-                                className="btn btn-sm btn-tra-white black-hover"
-                                href={`/department/${items.txtURL}`}
-                                title=""
-                                scroll={false}
-                              >
-                                View More Info
-                              </Link>
-                            </div>
-                          </div>
-                          <div className="doctor-meta">
-                          <Link
-                                className="btn btn-sm btn-tra-white black-hover"
-                                href={`/department/${items.txtURL}`}
-                                title=""
-                                scroll={false}
-                              >
-                            <h5 className="h5-sm steelblue-color">{items.txtName}</h5>
-                            <span className="blue-color">{items.txtShortDescription}</span>
-                            </Link>
-                          </div>
-                        </div>
-                      </div>
-                    ))
-                  }
+
+<Departmentpage movieInfo={card} />
+
                 </div>
                 <div className="all-doctors mb-40">
                 <a href="all-doctors.html" className="btn btn-blue blue-hover">
