@@ -10,7 +10,7 @@ const footers = () => {
 
 
 	const fetchbranches = async () => {
-		const response = await fetch('https://www.ganeshmri.com/admin/api/branches')
+		const response = await fetch('https://admin.ganeshparamedicalcollege.com/api/branches')
 		const data = await response.json();
 		fetchBranches(data);
 	}

@@ -12,7 +12,7 @@ const page = ({ params }) => {
   // const [othersBranches, setOthersBranches] = useState(null);
 
   const fetchBranch = async () => {
-    const response = await fetch(`https://www.ganeshmri.com/admin/api/branchesdetails/${slug}`)
+    const response = await fetch(`https://admin.ganeshparamedicalcollege.com/api/branchesdetails/${slug}`)
     const data = await response.json();
     setBranchDetails(data);
   }

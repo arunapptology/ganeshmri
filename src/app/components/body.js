@@ -1,18 +1,15 @@
 "use client"
 import React, { useEffect, useState } from 'react'
-import { useDispatch , useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+
+import { useGetTestimonialResultQuery } from '../redux/services/postApis';
 
 //import Popup from './popup';
 
 import Link from 'next/link';
-
-
 import dynamic from "next/dynamic";
-
 import Loading from '../Loading';
-
-import  { getBlogData } from '../redux/blogSlice';
-
+import { getBlogData } from '../redux/blogSlice';
 import Contactform from './contactform';
 
 
@@ -20,9 +17,6 @@ const Services = dynamic(() => import('./HomeComponents/Services'), {
 	ssr: false,
 	loading: () => <Loading />,
 });
-
-
-
 
 
 
@@ -40,54 +34,43 @@ const OwlCarousel = dynamic(() => import("react-owl-carousel"), {
 
 
 
-
-
 const body = () => {
 
 
 
-	const blogdata = useSelector((state)=>{
+	const blogdata = useSelector((state) => {
 		return state.blog.blogs;
-	   });
+	});
 
 
-	
+
 	const dispatch = useDispatch();
 
-	const [testimonial, setTestimonial] = useState(null);
+
 	const [banner, setBanner] = useState(null);
 
 
 
+	const { data: testimonialData } = useGetTestimonialResultQuery();
 
-	const fetchTestimonial = async () => {
-		const response = await fetch('https://www.ganeshmri.com/admin/api/testimonial')
-		const data = await response.json();
-		setTestimonial(data);
-	}
-
-
+  
 	const fetchBanner = async () => {
-		const response = await fetch('https://www.ganeshmri.com/admin/api/banner')
+		const response = await fetch('https://admin.ganeshparamedicalcollege.com/api/banner')
 		const data = await response.json();
 		setBanner(data);
 	}
 
-
-	const handleBlog = () =>{
-
+	const handleBlog = () => {
 		dispatch(getBlogData())
-	
 	}
 
 
+console.log(testimonialData);
 
- 
 
 
 	useEffect(() => {
 
-		fetchTestimonial()
 		fetchBanner()
 		handleBlog()
 
@@ -121,22 +104,17 @@ const body = () => {
 
 
 
-    const regex = /(<([^>]+)>)/gi
+	const regex = /(<([^>]+)>)/gi
 
 
 	return (
 		<>
- 
- 
-  
+
+
+
 			<title>Ganesh MRI</title>
 			<meta name="description" content="ewgfweg,ew gkjw we mgweg" />
 			<link rel="canonical" href="wiqhfiowqhfewf" ></link>
-
-
-
-
-
 
 
 			<section id="hero-4" className="bg-fixed hero-section division" style={{ height: "450px" }}>
@@ -156,7 +134,7 @@ const body = () => {
 						<div className="col-lg-4 col-xl-4 banner-right-sec">
 
 
-<Contactform />
+							<Contactform />
 
 						</div>
 
@@ -181,47 +159,47 @@ const body = () => {
 									<div className="col-sm-6 col-lg-3">
 
 										<Link href={`https://www.google.com/maps/dir//CS%2FOCF-7,+Pocket+3,+Sector+8,+Rohini,+New+Delhi,+Delhi,+110085/@28.7011754,77.0406494,12z/data=!4m8!4m7!1m0!1m5!1m1!1s0x390d03aeed6a6a09:0x6a5894628e7ffd25!2m2!1d77.1230508!2d28.7012004?entry=ttu`}>
-										<div className="sbox-1 icon-md wow fadeInUp" data-wow-delay="0.6s">
-										<div className="sbox-1 icon-md wow fadeInUp" data-wow-delay="0.4s">
+											<div className="sbox-1 icon-md wow fadeInUp" data-wow-delay="0.6s">
+												<div className="sbox-1 icon-md wow fadeInUp" data-wow-delay="0.4s">
 
-											<span className="flaticon-137-doctor blue-color"></span>
+													<span className="flaticon-137-doctor blue-color"></span>
 
-											<h5 className="h5-sm steelblue-color">Locate Centres</h5>
+													<h5 className="h5-sm steelblue-color">Locate Centres</h5>
 
-											{/* <p>Porta semper lacus cursus,
+													{/* <p>Porta semper lacus cursus,
 											</p> */}
-										</div>
-										</div>
-									</Link>
+												</div>
+											</div>
+										</Link>
 
 									</div>
 									<div className="col-sm-6 col-lg-3">
 
 										<Link href={`/department/`}>
-										<div className="sbox-1 icon-md wow fadeInUp" data-wow-delay="0.6s">
+											<div className="sbox-1 icon-md wow fadeInUp" data-wow-delay="0.6s">
 
-											<span className="flaticon-076-microscope blue-color"></span>
+												<span className="flaticon-076-microscope blue-color"></span>
 
-											<h5 className="h5-sm steelblue-color">Find a Test</h5>
+												<h5 className="h5-sm steelblue-color">Find a Test</h5>
 
-											{/* <p>Porta semper lacus cursus,
+												{/* <p>Porta semper lacus cursus,
 											</p> */}
-										</div>
+											</div>
 										</Link>
 									</div>
 
 									<div className="col-sm-6 col-lg-3">
 
 										<Link href={`/health-packages`} >
-										<div className="sbox-1 icon-md wow fadeInUp" data-wow-delay="0.8s">
+											<div className="sbox-1 icon-md wow fadeInUp" data-wow-delay="0.8s">
 
-											<span className="flaticon-008-ambulance-6 blue-color"></span>
+												<span className="flaticon-008-ambulance-6 blue-color"></span>
 
-											<h5 className="h5-sm steelblue-color">Health Packages</h5>
+												<h5 className="h5-sm steelblue-color">Health Packages</h5>
 
-											{/* <p>Porta semper lacus cursus,
+												{/* <p>Porta semper lacus cursus,
 											</p> */}
-										</div>
+											</div>
 										</Link>
 
 
@@ -253,7 +231,7 @@ const body = () => {
 
 
 
-{/* 
+			{/* 
 
  <//Popup /> */}
 
@@ -363,8 +341,8 @@ const body = () => {
 
 					<h3 className="h3-md steelblue-color">Health Packages</h3>
 
-				{/*  */}
-				<Services />
+					{/*  */}
+					<Services />
 
 				</div>
 			</section>
@@ -466,17 +444,17 @@ const body = () => {
 
 												<h3 className="h3-md steelblue-color">PET Scans </h3>
 												<p className="mb-30">Positron emission tomography (PET) is said to be a functional imaging technique
-that will use radioactive substances called radiotracers to visualize and detect any
-changes in the metabolic processes.
+													that will use radioactive substances called radiotracers to visualize and detect any
+													changes in the metabolic processes.
 												</p>
 
 												<p className="mb-30">Monitors body’s physiological activity that includes the following: Blood Flow,
-Regional Chemical Composition, and Absorption. The different tracers will be
-used for different imaging purposes; this also depends on the target process
-within the body.</p>
+													Regional Chemical Composition, and Absorption. The different tracers will be
+													used for different imaging purposes; this also depends on the target process
+													within the body.</p>
 												<p className="mb-30">Our Machine is the Gemini TF whole-body scanner which is the first commercially
-available fully 3-dimensional PET scanner. It possesses TOF capability along with
-conventional imaging capability.</p>
+													available fully 3-dimensional PET scanner. It possesses TOF capability along with
+													conventional imaging capability.</p>
 
 
 												{/* <a href="service-1.html" className="btn btn-blue blue-hover mt-30">View More
@@ -503,13 +481,13 @@ conventional imaging capability.</p>
 
 												<p className="mb-30">
 
-												Computerized tomography (CT) scan uses a combination/series of the X-ray
-images from different angles of the body to create cross-sectional images (slices)
-of your bones, the blood vessels and the soft tissues of the body.
-</p>
-<p>
-Using our 128-slice CT scan machine which has 128 detectors, will allows to even
-acquire multiple images in one rotation itself in a 3D format.
+													Computerized tomography (CT) scan uses a combination/series of the X-ray
+													images from different angles of the body to create cross-sectional images (slices)
+													of your bones, the blood vessels and the soft tissues of the body.
+												</p>
+												<p>
+													Using our 128-slice CT scan machine which has 128 detectors, will allows to even
+													acquire multiple images in one rotation itself in a 3D format.
 												</p>
 
 												<div className="row">
@@ -519,10 +497,10 @@ acquire multiple images in one rotation itself in a 3D format.
 															<div className="box-list-icon blue-color"><i
 																className="fas fa-angle-double-right"></i></div>
 															<p className="p-s">Conditions like- Cancer, Heart disease, Internal Injuries, Lung nodules and Liver
-Masses can be diagnosed and effectiveness of their treatment can be monitored.</p>
-														</div>  
+																Masses can be diagnosed and effectiveness of their treatment can be monitored.</p>
+														</div>
 
-													
+
 													</div>
 													<div className="col-xl-6">
 
@@ -530,10 +508,10 @@ Masses can be diagnosed and effectiveness of their treatment can be monitored.</
 															<div className="box-list-icon blue-color"><i
 																className="fas fa-angle-double-right"></i></div>
 															<p className="p-s">Our machine also stands apart mainly for its usefulness in its application of CCTA
-(Coronary computed tomography angiography)</p>
+																(Coronary computed tomography angiography)</p>
 														</div>
 
-														
+
 													</div>
 												</div>
 
@@ -561,18 +539,18 @@ Masses can be diagnosed and effectiveness of their treatment can be monitored.</
 												<h3 className="h3-md steelblue-color">MRI Diagnostic</h3>
 
 												<p className="mb-30">Magnetic resonance imaging (MRI) uses magnetic and radio waves to produce
-3D images of structures of your body. This helps to detect any underlying
-anomaly and pathology using our latest and tech machines (1.5T and 3T).
-Conditions like- Stroke, Tumor, and Breast cancer, Joint disorders etc. can be
-detected.
-</p>
-<p>
-The 3T scanners are ideal for the brain, the vascular, the musculoskeletal and
-the small bone imaging. Our 1.5 T and 3T MRI machines provide an
-extremely clear picture and vivid images.
+													3D images of structures of your body. This helps to detect any underlying
+													anomaly and pathology using our latest and tech machines (1.5T and 3T).
+													Conditions like- Stroke, Tumor, and Breast cancer, Joint disorders etc. can be
+													detected.
+												</p>
+												<p>
+													The 3T scanners are ideal for the brain, the vascular, the musculoskeletal and
+													the small bone imaging. Our 1.5 T and 3T MRI machines provide an
+													extremely clear picture and vivid images.
 												</p>
 
-												
+
 
 												<a href="service-1.html" className="btn btn-blue blue-hover mt-30">View More
 													Details</a>
@@ -603,31 +581,31 @@ extremely clear picture and vivid images.
 
 
 												<p className="mb-30">Most of them possess a shorter wavelength which ranges from 0.01 to 10
-nanometers; this corresponds to the frequencies in the range of 3 × 1019 Hz to
-3×1016 Hz.
+													nanometers; this corresponds to the frequencies in the range of 3 × 1019 Hz to
+													3×1016 Hz.
 												</p>
 
 
 
 												<p className="mb-30">The structures are studied by the radiologist from the X-ray of different body
-parts as per the density of the image and underlying pathologies are as follows-
+													parts as per the density of the image and underlying pathologies are as follows-
 												</p>
 
 
 
 
 												<p className="mb-30">Pneumonia, Tuberculosis (Tb), Heart Failure, Cancer, Fluid around the Heart,
-Kidney Disease etc
+													Kidney Disease etc
 												</p>
 
 
 												<p className="mb-30">Our Dr. F-X ray Machine gives an access to about a low dose radiation to all
-patients of patients. For example- for chest X-ray around 5mAs
+													patients of patients. For example- for chest X-ray around 5mAs
 												</p>
 
 												<p className="mb-30">It gives the patients a newer approach along with a better picture of their health.
-It also produces the clear images of any difficult anatomies which includes the
-lateral spine, lateral C spine etc.
+													It also produces the clear images of any difficult anatomies which includes the
+													lateral spine, lateral C spine etc.
 												</p>
 
 												{/* <a href="service-2.html" className="btn btn-blue blue-hover mt-30">View More
@@ -657,20 +635,20 @@ lateral spine, lateral C spine etc.
 
 			{/* ===testimonial== */}
 
-			<section id="reviews-" className="bg-lightgrey ">
+			<section id="reviews-" className="bg-lightgrey " style={{padding:'40px 0px'}}>
 				<div className="container">
 
 					<div className="row">
-						<div className="col-lg-10 offset-lg-1">
+						<div className="col-lg-10 offset-lg-1 section-title">
 							<h3 className="h3-md steelblue-color">What Our Patients Say </h3>
 
-							
+
 						</div>
 					</div>
 
 
 					<div className="row">
-						{/* <div className="col-md-12">
+						<div className="col-md-12">
 							<OwlCarousel
 								className="owl-theme"
 								loop
@@ -680,7 +658,7 @@ lateral spine, lateral C spine etc.
 								{
 
 
-									testimonial && testimonial.map((itetmnl , i) => {
+testimonialData && testimonialData.map((itetmnl , i) => {
 
 										return (
 
@@ -709,7 +687,7 @@ lateral spine, lateral C spine etc.
 
 
 
-						</div> */}
+						</div> 
 					</div>
 
 
@@ -737,48 +715,38 @@ lateral spine, lateral C spine etc.
 
 					<div className="row">
 
-					{
-  
-  blogdata&&blogdata.map((items , i)=>{
+						{
 
-	return (
+							blogdata && blogdata.map((items, i) => {
 
-<div key={i} className="col-lg-4">
-							<div className="blog-post wow fadeInUp" data-wow-delay="0.4s">
+								return (
 
+									<div key={i} className="col-lg-4">
+										<div className="blog-post wow fadeInUp" data-wow-delay="0.4s">
+											<div className="blog-post-img">
+												<img className="img-fluid"
+													src={items.imageurl + '/' + items.txtBnrDsktp}
+													alt={items.txtImageAltTag} />
+											</div>
 
-								<div className="blog-post-img">
-								<img className="img-fluid" 
-                            src={items.imageurl + '/' + items.txtBnrDsktp}
-                            alt={items.txtImageAltTag} />
-								</div>
+											<div className="blog-post-txt">
+												<h5 className="h5-xl steelblue-color"><Link href={`blogs/${items.txtURL}`}>{items.txtName.slice(0, 50)}</Link></h5>
+												<span>
+													{new Date(items.created_at).toDateString()}
+												</span>
+												<span> <b>Dr.Ravin Sharma</b></span>
+												<p>  {items.txtDescription.slice(0, 200).replace(regex, "")} ...
+												</p>
+											</div>
 
+										</div>
+									</div>
 
-								<div className="blog-post-txt">
-                                                    <h5 className="h5-xl steelblue-color"><Link href={`blogs/${items.txtURL}`}>{items.txtName.slice(0, 50)}</Link></h5>
-                                                    <span>
-                                                        {new Date(items.created_at).toDateString()}
-                                                    </span>
-                                                    <span> <b>Dr.Ravin Sharma</b></span>
-                                                    <p>  {items.txtDescription.slice(0, 200).replace(regex, "")} ...
-                                                    </p>
-                                                </div>
+								)
+							})
+						}
 
-
-
-
-							</div>
-						</div>
-
-	)
-})
-					}
-						
-
-					
-  
 					</div>
-
 
 				</div>
 			</section>

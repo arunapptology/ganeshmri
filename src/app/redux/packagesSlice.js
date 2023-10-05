@@ -5,7 +5,7 @@ import { createAsyncThunk ,  createSlice } from "@reduxjs/toolkit";
 
 export const getPackagesData =  createAsyncThunk("getPackages" , async () => {
 
-     const response = await fetch(`https://www.ganeshmri.com/admin/api/packages`);
+     const response = await fetch(`hhttps://admin.ganeshparamedicalcollege.com/api/packages`);
      const result = await response.json();
 
      return result;

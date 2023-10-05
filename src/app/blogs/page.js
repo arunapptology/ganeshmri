@@ -8,7 +8,7 @@ const page = () => {
     const [blogs, setBlogs] = useState(null);
 
     const fetchBlogs = async () => {
-        const response = await fetch('https://www.ganeshmri.com/admin/api/blogs')
+        const response = await fetch('https://admin.ganeshparamedicalcollege.com/api/blogs')
         const data = await response.json();
         setBlogs(data);
     }

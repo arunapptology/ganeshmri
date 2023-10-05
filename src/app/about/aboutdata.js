@@ -5,7 +5,7 @@ const aboutdata = () => {
 	const [about, fetchAbout] = useState();
 
 	const fetchabout = async () => {
-		const response = await fetch('https://www.ganeshmri.com/admin/api/pages/about-us')
+		const response = await fetch('https://admin.ganeshparamedicalcollege.com/api/pages/about-us')
 		const data = await response.json();
 		fetchAbout(data);
 	}

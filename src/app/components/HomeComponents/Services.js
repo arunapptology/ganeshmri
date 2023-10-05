@@ -5,13 +5,18 @@ import Link from 'next/link';
 import dynamic from "next/dynamic";
 import { useDispatch , useSelector } from 'react-redux';
 
-import { useGetPackageResultQuery } from '@/app/redux/services/postApis';
+//import { useGetPackageResultQuery } from '@/app/redux/services/postApis';//
+
+import { useGetPackageResultQuery } from '../../redux/services/postApis';
+
+
+
 
 if (typeof window !== "undefined") {
 	window.$ = window.jQuery = require("jquery");
 }
 
-import { addcart } from '@/app/redux/cartSlice';
+import { addcart } from '../../redux/cartSlice';
 
 import "owl.carousel/dist/assets/owl.carousel.css";
 import "owl.carousel/dist/assets/owl.theme.default.css";
@@ -58,10 +63,7 @@ const Services = () => {
 	const dispatch = useDispatch();
 
 
-	   const totalitem = useSelector((state)=>{
-		return state;
-	   });
-
+	 
 	 
 
 	const handleAddCart = (product) => {

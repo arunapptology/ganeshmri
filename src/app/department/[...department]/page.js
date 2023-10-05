@@ -1,9 +1,12 @@
 "use client"
 import Link from 'next/link';
 import React, { useEffect, useState } from 'react'
-import { useGetDepartmentDataQuery ,useGetCategoryDataQuery } from '@/app/redux/services/postApis';
+
+import { useGetDepartmentDataQuery ,useGetCategoryDataQuery } from '../../redux/services/postApis';
+
 import { useParams } from 'next/navigation'
-import Loading from '@/app/Loading';
+
+import Loading from '../../Loading';
 
 
 const page = () => {
@@ -24,7 +27,7 @@ const param =  params.department;
 
  
   const fetchCategory = async () => {
-    const response = await fetch(`https://ganeshmri.com/admin/api/category`)
+    const response = await fetch(`https://admin.ganeshparamedicalcollege.com/api/category`)
     const data = await response.json();
     setcategoryList(data);
   }

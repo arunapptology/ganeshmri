@@ -13,7 +13,6 @@ import cartReducer from "./cartSlice";
 import { setupListeners } from "@reduxjs/toolkit/dist/query";
 
 
-
 import { persistStore, persistReducer } from 'redux-persist'
 import storage from 'redux-persist/lib/storage' // defaults to localStorage for web
 

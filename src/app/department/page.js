@@ -19,7 +19,7 @@ const page = () => {
  
   const getCardData = async () => {
       const res = await fetch(
-        `https://www.ganeshmri.com/admin/api/categorybylimit/${limit}/${page}`
+        `https://admin.ganeshparamedicalcollege.com/api/categorybylimit/${limit}/${page}`
       );
       const data = await res.json();
       console.log(data);

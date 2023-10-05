@@ -3,10 +3,15 @@ import React, { useEffect, useState } from 'react'
 import { useParams } from 'next/navigation'
 
 import allProjects from '../../projectData';
-import Contactform from '@/app/components/contactform';
 
 
-import { useGetDepartmentDetailsQuery } from '@/app/redux/services/postApis';
+import Contactform from '../../components/contactform';
+
+
+
+import { useGetDepartmentDetailsQuery } from '../../redux/services/postApis';
+
+    
 import $ from 'jquery';
 
 const page = ({ props }) => {
@@ -52,13 +57,6 @@ const page = ({ props }) => {
                 </div>
 
             </div>
-
-
-
-
-
-
-
 
             <section
                 id="doctor-2-details"

@@ -25,7 +25,7 @@ const contactform = () => {
         setMobile(result.mobile)
         setComment(result.comment)
 
-    const res = await fetch('https://www.ganeshmri.com/admin/api/contactusform', {
+    const res = await fetch('https://admin.ganeshparamedicalcollege.com/api/contactusform', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',

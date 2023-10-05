@@ -8,7 +8,7 @@ export const postApis =  createApi({
     reducerPath :"postApis",
 
     baseQuery:fetchBaseQuery({
-        baseUrl:'https://www.ganeshmri.com/admin/api/'
+        baseUrl:'https://admin.ganeshparamedicalcollege.com/api/'
     }),
     endpoints: (builder) => ({
         
@@ -46,7 +46,10 @@ export const postApis =  createApi({
         query: (slug) => `packages/${slug}`,
         }),
 
-            
+    getTestimonialResult: builder.query({
+        query: () => `testimonial`,
+        }),
+    
 
 
       }),
@@ -63,5 +66,6 @@ export const {
      useGetSearchResultQuery,
      useGetBlogResultQuery,
      useGetPackageResultQuery,
-     useGetCategoryLimitDataQuery
+     useGetCategoryLimitDataQuery,
+     useGetTestimonialResultQuery
     } = postApis;

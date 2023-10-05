@@ -122,10 +122,10 @@ alt="mobile-logo" /></span>
                                         item.carts.CartItems.length > 0 ?
                                             <thead>
                                                 <tr>
-                                                    <th scope="col">Image</th>
+                                               
                                                     <th scope="col">Product</th>
                                                     <th scope="col">Price</th>
-                                                    <th scope="col">Actions</th>
+                                                    <th scope="col">Action</th>
                                                 </tr>
                                             </thead>
                                             : null
@@ -135,13 +135,7 @@ alt="mobile-logo" /></span>
                                             item.carts.CartItems ?
                                                 item.carts.CartItems.map((items, i) => (
                                                     <tr key={i}>
-                                                        <td className="w-25">
-                                                            <img
-                                                                className="card-img mx-auto d-block"
-                                                                src={`${items.imgthumburl}/${items.txtBnrDsktp}`}
-                                                                alt={`${items.txtImageAltTag} `}
-                                                            />
-                                                        </td>
+                                                       
                                                         <td>{items.txtName.slice(0, 60)}</td>
                                                         <td><b> &#x20B9;{items.txtDiscountedPrice}</b></td>
                                                         <td>
@@ -161,12 +155,12 @@ alt="mobile-logo" /></span>
                                         item.carts.CartItems.length > 0 ?
                                             <tfoot>
                                                 <tr>
-                                                    <th>Total Items : {item.carts.totalQuantity}</th>
+                                                  
                                                     <th>Total Amount : </th>
                                                     <th>&#x20B9;{item.carts.totalPrice}</th>
-                                                    <th><Link href={`/cart-details`} className='btn custom-btn2'>Checkout</Link></th>
+                                                    <th><Link href={`/cart-details`} className='btn custom-btn2'>Cart</Link></th>
                                                 </tr>
-                                            </tfoot>
+                                            </tfoot> 
                                             : null
                                     }
                                 </table>

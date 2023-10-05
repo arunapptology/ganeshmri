@@ -7,9 +7,9 @@ const cardboard = () => {
     const [packages, setPackages] = useState('');
 
     const limit = 1000 ;
-
+   
 	const fetchPackages = async () => {
-		const response = await fetch(`https://www.ganeshmri.com/admin/api/packages/${limit}`)
+		const response = await fetch(`https://admin.ganeshparamedicalcollege.com/api/packages/${limit}`)
 		const data = await response.json();
 		setPackages(data);
 	}
