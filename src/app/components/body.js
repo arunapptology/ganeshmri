@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from 'react'
 import { useDispatch , useSelector } from 'react-redux';
 
-import Popup from './popup';
+//import Popup from './popup';
 
 import Link from 'next/link';
 
@@ -253,9 +253,9 @@ const body = () => {
 
 
 
+{/* 
 
-
- <Popup />
+ <//Popup /> */}
 
 
 

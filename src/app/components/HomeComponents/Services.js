@@ -93,8 +93,9 @@ const Services = () => {
 						<Link className='head-tag' href={`health-packages/${items.txtPageSlug}`}>
 							<h5 className="card-title">{items.txtName}</h5>
 							<h6 className="card-subtitle mb-2 text-muted">MRP:
-								<span className='mrpreal'> &#x20B9; {items.txtMRP} </span> &nbsp; &nbsp;
-								<del className='discounted'>&#x20B9;{items.txtDiscountedPrice} </del>
+							<span className='mrpreal'>&#x20B9;{items.txtDiscountedPrice} </span>
+								<del className=' discounted'> &#x20B9; {items.txtMRP} </del> &nbsp; &nbsp;
+								
 							</h6>
 	
 						</Link>

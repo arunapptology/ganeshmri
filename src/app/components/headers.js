@@ -5,7 +5,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import dynamic from 'next/dynamic'
 import Loading from '../Loading';
 
-import { removeCart } from '../redux/cartSlice';
+import { removeCart , getCartTotal } from '../redux/cartSlice';
 
 import { 
     useGetCategoryDataQuery, 
@@ -21,20 +21,22 @@ loading: () => <Loading />,
 })
 
 
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
+
+  
 const headers = () => {
 
 const dispatch = useDispatch();
 
 
-    
-
-
 const handleRemove = (id)=>{
-    dispatch(removeCart(id))
+   dispatch(removeCart(id))
+   toast.error(`Remove to cart`);
 }
 
-
+  
 
 
 // category data
@@ -51,13 +53,14 @@ const { data: blogData } = useGetBlogResultQuery();
 
 const { data: packageData } = useGetPackageResultQuery(1);
 
-
-
+useEffect(() => {
+    dispatch(getCartTotal());
+  }, []);
 
 // cart data
 const item = useSelector((state) => state);
 
-
+console.log(item.carts);
   
 return (
 <>
@@ -142,10 +145,11 @@ alt="mobile-logo" /></span>
                                                         <td>{items.txtName.slice(0, 60)}</td>
                                                         <td><b> &#x20B9;{items.txtDiscountedPrice}</b></td>
                                                         <td>
-                                                        <img onClick={handleRemove(items.id)} 
+                                                        <p onClick={()=>handleRemove(items.id)} ><img 
                                                         className='icon' 
                                                         src={`${process.env.BASE_URL}/images/icons/trash.png`} 
                                                         />
+                                                        </p>
                                                           
                                                         </td>
                                                     </tr>
@@ -157,10 +161,10 @@ alt="mobile-logo" /></span>
                                         item.carts.CartItems.length > 0 ?
                                             <tfoot>
                                                 <tr>
-                                                    <th></th>
-                                                    <th>Total Amount </th>
-                                                    <th>&#x20B9;</th>
-                                                    <th><button className='btn btn-danger'>Checkout</button></th>
+                                                    <th>Total Items : {item.carts.totalQuantity}</th>
+                                                    <th>Total Amount : </th>
+                                                    <th>&#x20B9;{item.carts.totalPrice}</th>
+                                                    <th><Link href={`/cart-details`} className='btn custom-btn2'>Checkout</Link></th>
                                                 </tr>
                                             </tfoot>
                                             : null

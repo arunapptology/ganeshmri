@@ -1,10 +1,33 @@
+"use client"
 import React from 'react'
+import { useDispatch, useSelector } from 'react-redux';
+
+
+import { removeCart } from '../redux/cartSlice';
+import Link from 'next/link';
+
 
 const page = () => {
+
+    
+const dispatch = useDispatch();
+
+
+    // cart data
+const item = useSelector((state) => state);
+
+
+const handleRemove = (id)=>{
+    dispatch(removeCart(id))
+
+}
+
+console.log(item);
+
     return (
 
         <>  
-  
+       
             <div id="breadcrumb" className="division">
                 <div className="container">
                     <div className="row">
@@ -39,7 +62,9 @@ const page = () => {
                             <div className="ibox">
                                 <div className="ibox-title">
                                     <span className="pull-right">
-                                        (<strong>5</strong>) items
+
+                                    (<strong> {item.carts.CartItems.length ? item.carts.CartItems.length : 0} </strong>) items
+                                 
                                     </span>
                                     <h5>Items in your cart</h5>
                                 </div>
@@ -47,239 +72,72 @@ const page = () => {
                                     <div className="table-responsive">
                                         <table className="table shoping-cart-table">
                                             <tbody>
-                                                <tr>
+
+                                            {   
+                                            item.carts.CartItems ?
+                                                item.carts.CartItems.map((items, i) => (
+
+
+                                                    <tr>
                                                     <td width={90}>
                                                         <div className="cart-product-imitation">
-                                                            <img src='https://cdn4.buysellads.net/uu/1/127419/1670532337-Stock2.jpg' />
-                                                        </div>
-                                                    </td>
-                                                    <td className="desc">
-                                                        <h5>
-                                                            <a href="#" className="text-navy">
-                                                            EMG (Electromyography) Test, Procedure & Cost
-                                                            </a>
-                                                        </h5>
-                                                        <p className="small">
-                                                            It is a long established fact that a reader will be
-                                                            distracted by the readable content of a page when
-                                                            looking at its layout. The point of using Lorem Ipsum
-                                                            is
-                                                        </p>
-                                                        
-                                                        <div className="m-t-sm">
-                                                         
-                                                            <a href="#" className="text-muted">
-                                                                <i className="fa fa-trash" /> Remove item
-                                                            </a>
+                                                        <img
+                                                                className="card-img mx-auto d-block"
+                                                                src={`${items.imgthumburl}/${items.txtBnrDsktp}`}
+                                                                alt={`${items.txtImageAltTag} `}
+                                                            />
                                                         </div>
                                                     </td> 
-                                                    <td>
-                                                        &#x20B9;180,00
-                                                        <s className="small text-muted">&#x20B9;230,00</s>
-                                                    </td>
-                                                    <td width={65}>
-                                                        <input
-                                                            type="text"
-                                                            className="form-control"
-                                                            placeholder={1}
-                                                        />
-                                                    </td>
-                                                    <td>
-                                                        <h4>&#x20B9;180,00</h4>
-                                                    </td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                </div>
-                                <div className="ibox-content">
-                                    <div className="table-responsive">
-                                        <table className="table shoping-cart-table">
-                                            <tbody>
-                                                <tr>
-                                                    <td width={90}>
-                                                        <div className="cart-product-imitation">
-                                                            <img src='https://cdn4.buysellads.net/uu/1/127419/1670532337-Stock2.jpg' />
-                                                        </div>
-                                                    </td>
                                                     <td className="desc">
-                                                        <h5>
-                                                            <a href="#" className="text-navy">
-                                                            EEG (Electroencephalogram) Test, Procedure & Cost
-                                                            </a>
+                                                        <Link href={`/health-packages/${items.txtURL}`} >
+                                                            <h5>
+                                                            {items.txtName.slice(0, 60)}
+                                                            
                                                         </h5>
                                                         <p className="small">
-                                                            There are many variations of passages of Lorem Ipsum
-                                                            available
-                                                        </p>
                                                         
-                                                        <div className="m-t-sm">
-                                                           
-                                                            <a href="#" className="text-muted">
-                                                                <i className="fa fa-trash" /> Remove item
-                                                            </a>
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        &#x20B9;50,00
-                                                        <s className="small text-muted">&#x20B9;63,00</s>
-                                                    </td>
-                                                    <td width={65}>
-                                                        <input
-                                                            type="text"
-                                                            className="form-control"
-                                                            placeholder={2}
-                                                        />
-                                                    </td>
-                                                    <td>
-                                                        <h4>&#x20B9;100,00</h4>
-                                                    </td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                </div>
-                                <div className="ibox-content">
-                                    <div className="table-responsive">
-                                        <table className="table shoping-cart-table">
-                                            <tbody>
-                                                <tr>
-                                                    <td width={90}>
-                                                        <div className="cart-product-imitation">
-                                                            <img src='https://cdn4.buysellads.net/uu/1/127419/1670532337-Stock2.jpg' />
-                                                        </div>
-                                                    </td>
-                                                    <td className="desc">
-                                                        <h5>
-                                                            <a href="#" className="text-navy">
-                                                            List of Ultrasound Test and Its Price
-                                                            </a>
-                                                        </h5>
-                                                        <p className="small">
-                                                            Distracted by the readable content of a page when
-                                                            looking at its layout. The point of using Lorem Ipsum
-                                                            is
+                            <div dangerouslySetInnerHTML={{__html: items&&items.txtDescription.slice(0, 150)}}></div>... 
                                                         </p>
+
+                                                        </Link>
                                                         
-                                                        <div className="m-t-sm">
-                                                          
-                                                            <a href="#" className="text-muted">
-                                                                <i className="fa fa-trash" /> Remove item
-                                                            </a>
-                                                        </div>
-                                                    </td>
-                                                    <td>&#x20B9;110,00</td>
-                                                    <td width={65}>
-                                                        <input
-                                                            type="text"
-                                                            className="form-control"
-                                                            placeholder={1}
-                                                        />
-                                                    </td>
+                                                       
+                                                    </td> 
                                                     <td>
-                                                        <h4>&#x20B9;110,00</h4>
+                              
+                                        <s className="small text-muted ">&#x20B9;{items.txtMRP}</s>
                                                     </td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                </div>
-                                <div className="ibox-content">
-                                    <div className="table-responsive">
-                                        <table className="table shoping-cart-table">
-                                            <tbody>
-                                                <tr>
-                                                    <td width={90}>
-                                                        <div className="cart-product-imitation">
-                                                            <img src='https://cdn4.buysellads.net/uu/1/127419/1670532337-Stock2.jpg' />
-                                                        </div>
+                                                 
+                                                    <td>
+                                                        <h4 className='mrpreal'>&#x20B9;{items.txtDiscountedPrice}</h4>
                                                     </td>
-                                                    <td className="desc">
-                                                        <h5>
-                                                            <a href="#" className="text-navy">
-                                                            CT Scan in Near You with Price List
-                                                            </a>
-                                                        </h5>
-                                                        <p className="small">
-                                                            Readable content of a page when looking at its layout.
-                                                            The point of using Lorem Ipsum is
-                                                        </p>
-                                                        
-                                                        <div className="m-t-sm">
+                                                    <td width={60}> <div className="m-t-sm">
                                                          
-                                                            <a href="#" className="text-muted">
-                                                                <i className="fa fa-trash" /> Remove item
-                                                            </a>
-                                                        </div>
-                                                    </td>
-                                                    <td>&#x20B9;130,00</td>
-                                                    <td width={65}>
-                                                        <input
-                                                            type="text"
-                                                            className="form-control"
-                                                            placeholder={1}
+                                                      
+                                                         <img onClick={()=>handleRemove(items.id)} 
+                                                        className='icon' 
+                                                        src={`${process.env.BASE_URL}/images/icons/trash.png`} 
                                                         />
-                                                    </td>
-                                                    <td>
-                                                        <h4>&#x20B9;130,00</h4>
-                                                    </td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                </div>
-                                <div className="ibox-content">
-                                    <div className="table-responsive">
-                                        <table className="table shoping-cart-table">
-                                            <tbody>
-                                                <tr>
-                                                    <td width={90}>
-                                                        <div className="cart-product-imitation">
-                                                            <img src='https://www.ganeshdiagnostic.com/admin/public/assets/images/category-banner/thumb/1680263776-mri%20scan.webp' />
-                                                        </div>
-                                                    </td>
-                                                    <td className="desc">
-                                                        <h5>
-                                                            <a href="#" className="text-navy">
-                                                            MRI Scan in Delhi with Test Cost
-                                                            </a>
-                                                        </h5>
-                                                        <p className="small">
-                                                            Page when looking at its layout. The point of using
-                                                            Lorem Ipsum is
-                                                        </p>
                                                         
-                                                        <div className="m-t-sm">
-                                                         
-                                                            <a href="#" className="text-muted">
-                                                                <i className="fa fa-trash" /> Remove item
-                                                            </a>
-                                                        </div>
-                                                    </td>
-                                                    <td>&#x20B9;700,00</td>
-                                                    <td width={65}>
-                                                        <input
-                                                            type="text"
-                                                            className="form-control"
-                                                            placeholder={1}
-                                                        />
-                                                    </td>
-                                                    <td>
-                                                        <h4>&#x20B9;70,00</h4>
-                                                    </td>
+                                                     </div></td>
                                                 </tr>
+
+
+                                                    ))
+                                                    : 'cart is empty'
+                                            }
+
+
+                                               
+
+
+
+
                                             </tbody>
                                         </table>
                                     </div>
                                 </div>
-                                <div className="ibox-content">
-                                    <button className="btn btn-primary pull-right">
-                                        <i className="fa fa fa-shopping-cart" /> Checkout
-                                    </button>
-                                    <button className="btn btn-white">
-                                        <i className="fa fa-arrow-left" /> Continue shopping
-                                    </button>
-                                </div>
+                             
                             </div>
                         </div>
                         <div className="col-md-3">
@@ -289,7 +147,7 @@ const page = () => {
                                 </div>
                                 <div className="ibox-content">
                                     <span>Total</span>
-                                    <h2 className="font-bold">&#x20B9;390,00</h2>
+                                    <h2 className="font-bold mrpreal">&#x20B9;{item.carts.totalPrice}</h2>
                                     <hr />
                                     <span className="text-muted small">
                                         *For United States, France and Germany applicable sales tax will
@@ -297,13 +155,12 @@ const page = () => {
                                     </span>
                                     <div className="m-t-sm">
                                         <div className="btn-group">
-                                            <a href="#" className="btn btn-primary btn-sm">
+                                            <a href="#" className="btn custom-btn3">
                                                 <i className="fa fa-shopping-cart" /> Checkout
                                             </a>
-                                            <a href="#" className="btn btn-white btn-sm">
-                                                {" "}
+                                            <Link href="/" className="btn custom-btn2">
                                                 Cancel
-                                            </a>
+                                            </Link>
                                         </div>
                                     </div>
                                 </div>
@@ -322,7 +179,7 @@ const page = () => {
                                     </span>
                                 </div>
                             </div> */}
-                            <div className="ibox">
+                            {/* <div className="ibox">
                                 <div className="ibox-content">
                                     <p className="font-bold">Other products you may be interested</p>
                                     <hr />
@@ -356,7 +213,7 @@ const page = () => {
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                            </div> */}
                         </div>
                     </div>
                 </div>

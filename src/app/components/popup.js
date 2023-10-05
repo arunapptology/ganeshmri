@@ -5,7 +5,11 @@ import Modal from 'react-modal'
 
 const popup = () => {
 
+    
+
     const [isOpen, setIsOpen] = useState(true)
+   
+
     const customStyles = {
        overlay: {
           backgroundColor: 'rgba(0, 0, 0, 0.6)'
