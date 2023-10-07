@@ -9,7 +9,7 @@ const nextConfig = {
         ignoreDuringBuilds: true
      },
      env: {
-        BASE_URL: 'https://ganeshmri-56z17hz6a-aruns-projects.vercel.app/',
+        BASE_URL: 'http://localhost:3000/',
       },
     async headers() {
         return [

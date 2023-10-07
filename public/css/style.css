@@ -13,9 +13,9 @@
     src: local(".SFNSText-Light"), local(".HelveticaNeueDeskInterface-Light"), local(".LucidaGrandeUI"), local("Ubuntu Light"), local("Segoe UI Light"), local("Roboto-Light"), local("DroidSans"), local("Tahoma");
   }
 
-  body {
+  /* body {
     font-family: "system-ui";
-  }
+  } */
 .y5khq1DT {
     align-items: center;
     display: flex;
@@ -516,6 +516,15 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 700;
   letter-spacing: -0.25px;
 }
+
+
+
+  h1 {
+    font-size: 45px !important;
+    color: white !important;
+    font-weight: 600 !important;
+}
+
 
 /* Header H5 */
 h5.h5-xs { font-size: 1.125rem; }  /* 18px */
@@ -3885,7 +3894,7 @@ padding: 10px;
 
 #pricing-1 .pricing-table ul.features li:last-child {
   border-bottom: none;
-}
+}  
 
 /*------------------------------------------*/
 /*   More Pricing Button
@@ -7010,4 +7019,5 @@ font-weight: 500;
 
   font-size: 13px;
 }
-  
+
+

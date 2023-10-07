@@ -1,40 +1,38 @@
 "use client"; //this is a client side component
 
-import { createAsyncThunk ,  createSlice } from "@reduxjs/toolkit";
+import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 
 
-export const getBlogData =  createAsyncThunk("getBlogs" , async () => {
+export const getBlogData = createAsyncThunk("getBlogs", async () => {
 
-     const response = await fetch(`https://admin.ganeshparamedicalcollege.com/api/blogs`);
-     const result = await response.json();
+  const response = await fetch(`https://admin.ganeshparamedicalcollege.com/api/blogs`);
+  const result = await response.json();
 
-     return result;
+  return result;
 })
 
 
 const initialState = {
   blogs: [],
-  pending:true,
-  error:null,
+  pending: true,
+  error: null,
 };
 
 export const blogSlice = createSlice({
 
-
-  name:"getBlogs" ,
+  name: "getBlogs",
   initialState,
 
-
   extraReducers: {
-    [getBlogData.pending]: (state)=> {
-        state.loading = true
+    [getBlogData.pending]: (state) => {
+      state.loading = true
     },
-    [getBlogData.fulfilled]: (state , action)=> {
-        state.loading = false,
+    [getBlogData.fulfilled]: (state, action) => {
+      state.loading = false,
         state.blogs = action.payload
     },
-    [getBlogData.rejected]: (state , action)=> {
-        state.loading = false,
+    [getBlogData.rejected]: (state, action) => {
+      state.loading = false,
         state.error = action.payload
     }
 

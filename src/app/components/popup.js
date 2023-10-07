@@ -9,6 +9,8 @@ const popup = () => {
 
     const [isOpen, setIsOpen] = useState(true)
    
+    console.log(isOpen)
+
 
     const customStyles = {
        overlay: {

@@ -2,6 +2,9 @@
 import React, {  useState } from 'react'
 
 import { useForm } from 'react-hook-form';
+
+
+import Popup from './popup'
 const contactform = () => {
 
     const {
@@ -16,7 +19,7 @@ const contactform = () => {
     const [comment, setComment] = useState('');
     const [message, setMessage] = useState('');
 
-
+    const [isOpen, setIsOpen] = useState(false)
   
     // =====--contact api form --==== //
 
@@ -49,9 +52,11 @@ const contactform = () => {
 
   return (
     <>
+{/* <Popup  /> */}
 
-  
-<div id="hero-section-form" className="text-center  bg-white ">
+
+
+<div id="hero-section-form" className="text-center  bg-white">
 								<div className="col-md-12 custom-form">
 									<h4 className="h4-xs">Request a call back</h4>
                                     <div className="col-lg-12 hero-form-msg text-center">
@@ -85,8 +90,6 @@ const contactform = () => {
 
                                                 {errors.mobile && <p className='error'>mobile is required.</p>}
                                             </div>
-
-
                                             <div id="input-comment" className="col-lg-12">
                                                 <textarea  name="comment"
                                                     {...register('comment')}
@@ -113,6 +116,8 @@ const contactform = () => {
 
                                     </form>
 							</div>
+
+  
 
     
     </>

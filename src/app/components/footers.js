@@ -127,6 +127,61 @@ get to the correct diagnosis and initiate an appropriate treatment plan.
 				</div>
 			</footer>
 
+
+
+			<div className='hide-in-desktop'>
+
+				<div className='footer-mobile'>
+					<ul>
+						<li>	<Link href={`https://www.google.com/maps/dir//CS%2FOCF-7,+Pocket+3,+Sector+8,+Rohini,+New+Delhi,+Delhi,+110085/@28.7011754,77.0406494,12z/data=!4m8!4m7!1m0!1m5!1m1!1s0x390d03aeed6a6a09:0x6a5894628e7ffd25!2m2!1d77.1230508!2d28.7012004?entry=ttu`}>
+											<div className="sbox-1 icon-md wow fadeInUp" data-wow-delay="0.6s">
+												<div className="sbox-1 icon-md wow fadeInUp" data-wow-delay="0.4s">
+
+													<span className="flaticon-137-doctor blue-color"></span>
+
+												
+
+													{/* <p>Porta semper lacus cursus,
+											</p> */}
+												</div>
+											</div>
+										</Link></li>
+						<li><Link href={`/department/`}>
+											<div className="sbox-1 icon-md wow fadeInUp" data-wow-delay="0.6s">
+
+												<span className="flaticon-076-microscope blue-color"></span>
+
+												
+
+												{/* <p>Porta semper lacus cursus,
+											</p> */}
+											</div>
+										</Link></li>
+						<li><Link href={`/health-packages`} >
+											<div className="sbox-1 icon-md wow fadeInUp" data-wow-delay="0.8s">
+
+												<span className="flaticon-008-ambulance-6 blue-color"></span>
+
+												
+												{/* <p>Porta semper lacus cursus,
+											</p> */}
+											</div>
+										</Link></li>
+						<li><Link href={`/doctors`}><div className="sbox-1 icon-md wow fadeInUp" data-wow-delay="1s">
+
+<span className="flaticon-083-stethoscope blue-color"></span>
+
+
+
+{/* <p>Porta semper lacus cursus,
+</p> */}
+</div>
+</Link></li>
+					</ul>
+				</div>
+
+			</div>
+
 		</>
 	)
 }

@@ -1,6 +1,11 @@
 // JavaScript Document
 
 
+$('.sd-body>li').click(()=>{
+
+	alert('fweugwe');
+})
+
 	$(window).on('load', function() {
 	
 		"use strict";

@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 
-import { useGetTestimonialResultQuery } from '../redux/services/postApis';
+import { useGetTestimonialResultQuery , useGetStaticpagesResultQuery } from '../redux/services/postApis';
 
 //import Popup from './popup';
 
@@ -11,6 +11,9 @@ import dynamic from "next/dynamic";
 import Loading from '../Loading';
 import { getBlogData } from '../redux/blogSlice';
 import Contactform from './contactform';
+
+
+import { animated, useSpring } from '@react-spring/web'
 
 
 const Services = dynamic(() => import('./HomeComponents/Services'), {
@@ -27,6 +30,8 @@ if (typeof window !== "undefined") {
 
 import "owl.carousel/dist/assets/owl.carousel.css";
 import "owl.carousel/dist/assets/owl.theme.default.css";
+import Head from 'next/head';
+
 
 const OwlCarousel = dynamic(() => import("react-owl-carousel"), {
 	ssr: false,
@@ -43,17 +48,14 @@ const body = () => {
 	});
 
 
-
 	const dispatch = useDispatch();
-
 
 	const [banner, setBanner] = useState(null);
 
-
-
 	const { data: testimonialData } = useGetTestimonialResultQuery();
+	const { data: staticPages } = useGetStaticpagesResultQuery();
 
-  
+
 	const fetchBanner = async () => {
 		const response = await fetch('https://admin.ganeshparamedicalcollege.com/api/banner')
 		const data = await response.json();
@@ -63,9 +65,6 @@ const body = () => {
 	const handleBlog = () => {
 		dispatch(getBlogData())
 	}
-
-
-console.log(testimonialData);
 
 
 
@@ -87,7 +86,7 @@ console.log(testimonialData);
 		smartSpeed: 1000,
 		responsive: {
 			0: {
-				items: 1,
+				items: 2,
 			},
 			600: {
 				items: 2,
@@ -107,14 +106,24 @@ console.log(testimonialData);
 	const regex = /(<([^>]+)>)/gi
 
 
+
+	const springs = useSpring({
+		from: { x: 0 },
+		to: { x: 100 },
+	  })
+	  
+
 	return (
 		<>
 
+<Head>
 
+<title>Ganesh MRI</title>
+<meta name="description" content="ewgfweg,ew gkjw we mgweg" />
+<link rel="canonical" href="wiqhfiowqhfewf" ></link>
 
-			<title>Ganesh MRI</title>
-			<meta name="description" content="ewgfweg,ew gkjw we mgweg" />
-			<link rel="canonical" href="wiqhfiowqhfewf" ></link>
+</Head>
+
 
 
 			<section id="hero-4" className="bg-fixed hero-section division" style={{ height: "450px" }}>
@@ -124,7 +133,7 @@ console.log(testimonialData);
 							<div className="hero-txt mb-250">
 
 
-								<h2 className="steelblue-color">Making Healthcare Facilities accessible to all, at reasonable rates</h2>
+								<h1 className="steelblue-color">Making Healthcare Facilities accessible to all, at reasonable rates</h1>
 
 
 							</div>
@@ -134,7 +143,14 @@ console.log(testimonialData);
 						<div className="col-lg-4 col-xl-4 banner-right-sec">
 
 
+						<div className='hide-in-desktop'>
+
+</div>
+
+
+<div className='hide-in-mobile'>
 							<Contactform />
+							</div>
 
 						</div>
 
@@ -143,7 +159,13 @@ console.log(testimonialData);
 				</div>
 			</section>
 
-			<section id="about-3" className="about-section division" >
+
+
+			<div className='hide-in-desktop'>
+							<Contactform />
+							</div>
+
+			<section id="about-3" className="about-section division hide-in-mobile" >
 				<div className="container" >
 					<div className="abox-3-holder custom-strap" style={{ backgroundColor: "#f8f9fb" }}>
 						<div className="row d-flex align-items-center" >
@@ -155,6 +177,8 @@ console.log(testimonialData);
 
 
 								<div className="row">
+
+									
 
 									<div className="col-sm-6 col-lg-3">
 
@@ -620,22 +644,9 @@ console.log(testimonialData);
 				</div>
 			</section>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 			{/* ===testimonial== */}
 
-			<section id="reviews-" className="bg-lightgrey " style={{padding:'40px 0px'}}>
+			<section id="reviews-" className="bg-lightgrey " style={{ padding: '40px 0px' }}>
 				<div className="container">
 
 					<div className="row">
@@ -657,11 +668,8 @@ console.log(testimonialData);
 							>
 								{
 
-
-testimonialData && testimonialData.map((itetmnl , i) => {
-
+									testimonialData && testimonialData.map((itetmnl, i) => {
 										return (
-
 											<div key={i} className="item">
 												<div className="review-2">
 													<div className="review-txt text-center">
@@ -685,33 +693,19 @@ testimonialData && testimonialData.map((itetmnl , i) => {
 								}
 							</OwlCarousel>
 
-
-
-						</div> 
+						</div>
 					</div>
-
 
 				</div>
 			</section>
 
-
-
 			<section id="blog-1" className="wide-60 blog-section division">
 				<div className="container">
-
-
-
 					<div className="row">
 						<div className="col-lg-10 offset-lg-1 section-title">
-
-
 							<h3 className="h3-md steelblue-color">Our Stories, Tips & Latest News</h3>
-
-
 						</div>
 					</div>
-
-
 
 					<div className="row">
 
