@@ -9,11 +9,11 @@ const nextConfig = {
         ignoreDuringBuilds: true
      },
      env: {
-        BASE_URL: 'http://localhost:3000/',
+        BASE_URL: 'https://ganeshmri.com',
       },
     async headers() {
         return [
-            {  
+            {    
                 // matching all API routes
                 source: "/api/:path*",
                 headers: [
