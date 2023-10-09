@@ -9,7 +9,7 @@ const nextConfig = {
         ignoreDuringBuilds: true
      },
      env: {
-        BASE_URL: 'https://ganeshmri.com',
+        BASE_URL: 'https://ganeshmri.com/',
       },
     async headers() {
         return [
