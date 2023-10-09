@@ -2,9 +2,9 @@
 import React, {  useState } from 'react'
 
 import { useForm } from 'react-hook-form';
-
-
 import Popup from './popup'
+
+
 const contactform = () => {
 
     const {
@@ -24,6 +24,8 @@ const contactform = () => {
     // =====--contact api form --==== //
 
     const onSubmit = async (result) => {
+
+        
         setUsername(result.username)
         setMobile(result.mobile)
         setComment(result.comment)
@@ -117,7 +119,6 @@ const contactform = () => {
                                     </form>
 							</div>
 
-  
 
     
     </>

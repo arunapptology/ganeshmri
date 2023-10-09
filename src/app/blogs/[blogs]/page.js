@@ -38,6 +38,8 @@ const page = ({ params }) => {
 
     const slug = params.blogs;
 
+    console.log(slug);
+
     const [blogDetail, setBlogDetails] = useState(null);
 
     const fetchBlogs = async () => {

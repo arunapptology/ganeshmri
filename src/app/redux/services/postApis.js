@@ -31,7 +31,7 @@ export const postApis = createApi({
         getDepartmentDetails: builder.query({
             query: (slug) => `departmentDetail/${slug}`,
         }),
-
+  
         getSearchResult: builder.query({
             query: (slug) => `searchList/${slug}`,
         }),

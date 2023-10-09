@@ -9,9 +9,9 @@ const branchesList = () => {
 		const response = await fetch('https://admin.ganeshparamedicalcollege.com/api/branches')
 		const data = await response.json();
 		fetchBranches(data);
-	}
+	}     
 
-	useEffect(() => {
+	useEffect(() => {   
 		fetchbranches()
 	}, [])
 

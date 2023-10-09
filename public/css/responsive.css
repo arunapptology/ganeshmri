@@ -2113,7 +2113,7 @@
 width: 120px !important;
   }
   .sd-header form{
-    width: 156% !important;
+    width: 130% !important;
   }
 
   input#search-bar{
@@ -2137,16 +2137,16 @@ width: 120px !important;
   }
   
   .sd-header .toggle-clise-tag{ 
-    font-size: 35px;
-    background: #e5e8ec;
-    padding: 5px;
-    width: 35px;
-    height: 35px;
-    line-height: 0.5;
+    font-size: 30px;
+    background: #234184;
+    padding: 10px 12px;
+    width: 40px;
+    height: 40px;
+    line-height: 20px;
     border-radius: 50%;
     position: absolute;
     right: -16px;
-    color: #e31e25;
+    color: #fff;
     top: 5px;
   }
   
@@ -2180,9 +2180,9 @@ width: 120px !important;
   .footer-mobile{
     position: fixed;
     padding: 5px;
-    bottom: 0px;
+    bottom: 5px;
     width: 96%;
-    height: 65px;
+    height: 76px;
     margin: auto;
     left: 2%;
     border-radius: 14px;
@@ -2196,7 +2196,7 @@ width: 120px !important;
   .footer-mobile li{
     display: inline-block;
     width: calc(100%/4);
-    padding: 10px;
+    padding: 0px;
   }
 
   .flaticon-076-microscope, 
@@ -2208,7 +2208,7 @@ width: 120px !important;
   }
 
   .icon-md [class*="flaticon-"]:before{
-font-size: 35px;
+font-size: 30px;
   }
 
   .hide-in-desktop{
@@ -2231,6 +2231,24 @@ font-size: 35px;
   margin-left: 5px;
   text-align: -webkit-match-parent;
   padding: 3px
+ }
+
+
+ .menu-item:hover .drop-menu{
+  width: 100% !important;
+  position: fixed !important;
+  background: white !important;
+  text-align: left !important;
+  right: 0px !important;
+ }
+
+ .small-tag{
+ line-height: 0px;
+
+
+ }
+ .small-tag small{
+  color: white;
  }
 }
 

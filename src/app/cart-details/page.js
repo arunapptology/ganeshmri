@@ -10,9 +10,9 @@ import Link from 'next/link';
 const page = () => {
 
     
-const dispatch = useDispatch();
+const dispatch = useDispatch();  
 
-
+   
     // cart data
 const item = useSelector((state) => state);
 

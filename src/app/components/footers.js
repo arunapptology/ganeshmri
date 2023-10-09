@@ -137,12 +137,12 @@ get to the correct diagnosis and initiate an appropriate treatment plan.
 											<div className="sbox-1 icon-md wow fadeInUp" data-wow-delay="0.6s">
 												<div className="sbox-1 icon-md wow fadeInUp" data-wow-delay="0.4s">
 
-													<span className="flaticon-137-doctor blue-color"></span>
+										<span className="flaticon-137-doctor blue-color"></span>
 
 												
 
-													{/* <p>Porta semper lacus cursus,
-											</p> */}
+												<p className='small-tag'> <small>What's App
+											</small></p>
 												</div>
 											</div>
 										</Link></li>
@@ -153,8 +153,8 @@ get to the correct diagnosis and initiate an appropriate treatment plan.
 
 												
 
-												{/* <p>Porta semper lacus cursus,
-											</p> */}
+												<p className='small-tag'> <small>What's App
+											</small></p>
 											</div>
 										</Link></li>
 						<li><Link href={`/health-packages`} >
@@ -163,8 +163,8 @@ get to the correct diagnosis and initiate an appropriate treatment plan.
 												<span className="flaticon-008-ambulance-6 blue-color"></span>
 
 												
-												{/* <p>Porta semper lacus cursus,
-											</p> */}
+												<p className='small-tag'> <small>Call us
+											</small></p>
 											</div>
 										</Link></li>
 						<li><Link href={`/doctors`}><div className="sbox-1 icon-md wow fadeInUp" data-wow-delay="1s">
@@ -173,8 +173,8 @@ get to the correct diagnosis and initiate an appropriate treatment plan.
 
 
 
-{/* <p>Porta semper lacus cursus,
-</p> */}
+<p className='small-tag'> <small>Enquire Now
+											</small></p>
 </div>
 </Link></li>
 					</ul>
