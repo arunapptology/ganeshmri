@@ -3,10 +3,12 @@ import React, {  useState } from 'react'
 
 import { useForm } from 'react-hook-form';
 import Popup from './popup'
+import { useParams, useRouter , redirect } from 'next/navigation'
 
 
 const contactform = () => {
 
+    const router = useRouter()
     const {
         register,
         handleSubmit,
@@ -14,21 +16,17 @@ const contactform = () => {
     } = useForm();
 
 
-    const [username, setUsername] = useState('');
-    const [mobile, setMobile] = useState('');
-    const [comment, setComment] = useState('');
     const [message, setMessage] = useState('');
-
-    const [isOpen, setIsOpen] = useState(false)
-  
+    const [isLoading , setIsLoading] = useState(false);
     // =====--contact api form --==== //
 
     const onSubmit = async (result) => {
 
-        
-        setUsername(result.username)
-        setMobile(result.mobile)
-        setComment(result.comment)
+        let username = result.username;
+        let mobile = result.mobile;
+        let comment = result.comment;
+
+        setIsLoading(true)
 
     const res = await fetch('https://admin.ganeshparamedicalcollege.com/api/contactusform', {
         method: 'POST',
@@ -41,9 +39,10 @@ const contactform = () => {
     const data = await res.json()
       if (data.status==1) {
         setMessage(data.msg);
-        setMobile('');
-        setComment('');
-        setUsername('');
+
+        setIsLoading(false)
+
+        router.push("/thank-you")
     }else{
         setMessage(data.msg);
     }
@@ -113,7 +112,7 @@ const contactform = () => {
                                             </div>
 
                                             <div className="col-lg-12 hero-form-msg text-center">
-                                                <div className="sending-msg"><span className="loading">{message && message}</span></div>
+                                            {isLoading===true? <div class="lds-ellipsis"><div></div><div></div><div></div><div></div></div>: <div className="sending-msg"><span className="loading">{message && message}</span></div>}
                                             </div>
 
                                     </form>

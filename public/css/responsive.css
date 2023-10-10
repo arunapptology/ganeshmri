@@ -569,7 +569,7 @@
 
   .wsmobileheader { height: 70px; background-color: #fff; box-shadow: 0 0 2px rgba(50, 50, 50, 0.4); }
 
-  .wsmobileheader .smllogo { margin-top: 15px; }
+  .wsmobileheader .smllogo { margin-top: 0px; }
   .wsanimated-arrow { padding: 14px 28px 14px 0px; margin: 19px 0 0 20px; }
   .wsanimated-arrow span:before { top: -8px; width: 26px; }
   .wsanimated-arrow span:after { bottom: -8px; width: 20px; }
@@ -956,9 +956,11 @@
 
   .hero-widget { display: none; }
 
-  .wsmobileheader { height: 70px; background-color: #fff; box-shadow: 0 0 2px rgba(50, 50, 50, 0.4); }
-
-  .wsmobileheader .smllogo { margin-top: 15px; }
+  .wsmobileheader { height: 80px; background-color: #fff; box-shadow: 0 0 2px rgba(50, 50, 50, 0.4); }
+.headerwp marquee{
+  color: #234184 !important;
+}
+  .wsmobileheader .smllogo { margin-top: -10px; }
   .wsanimated-arrow { padding: 14px 28px 14px 0px; margin: 19px 0 0 20px; }
   .wsanimated-arrow span:before { top: -8px; width: 26px; }
   .wsanimated-arrow span:after { bottom: -8px; width: 20px; }
@@ -2128,7 +2130,7 @@ width: 120px !important;
 
   .side-nav-open{
     position: absolute;
-    top: 18px;
+    top: 35px;
     left: 15px;
   }
   
@@ -2192,6 +2194,10 @@ width: 120px !important;
     box-shadow: 0px 0px 20px -7px #bdbdbd;
   
   }
+ 
+  .footer-mobile img{
+    width: 30px ;
+  }
 
   .footer-mobile li{
     display: inline-block;
@@ -2216,7 +2222,7 @@ font-size: 30px;
   }
 
   .cart-menu{
-    top: 22px;
+    top: 35px;
     position: absolute;
     right: 8px;
   }
@@ -2250,6 +2256,18 @@ font-size: 30px;
  .small-tag small{
   color: white;
  }
+
+
+ .department-tabs .row{
+  padding: 0px !important;
+  margin: 10px 0px !important;
+ }
+
+ 
+ .department-tabs .container{
+  padding: 0px !important;
+ }
+
 }
 
 
@@ -2258,6 +2276,119 @@ font-size: 30px;
 .hide-in-desktop{
   display: none ;
     }
+
+
+
+    .lds-ellipsis {
+      display: inline-block;
+      position: relative;
+      width: 80px;
+      height: 80px;
+    }
+    .lds-ellipsis div {
+      position: absolute;
+      top: 33px;
+      width: 11px;
+      height: 11px;
+      border-radius: 50%;
+      background: #e31e25 ;
+      animation-timing-function: cubic-bezier(0, 1, 1, 0);
+    }
+    .lds-ellipsis div:nth-child(1) {
+      left: 8px;
+      animation: lds-ellipsis1 0.6s infinite;
+    }
+    .lds-ellipsis div:nth-child(2) {
+      left: 8px;
+      animation: lds-ellipsis2 0.6s infinite;
+    }
+    .lds-ellipsis div:nth-child(3) {
+      left: 32px;
+      animation: lds-ellipsis2 0.6s infinite;
+    }
+    .lds-ellipsis div:nth-child(4) {
+      left: 56px;
+      animation: lds-ellipsis3 0.6s infinite;
+    }
+    @keyframes lds-ellipsis1 {
+      0% {
+        transform: scale(0);
+      }
+      100% {
+        transform: scale(1);
+      }
+    }
+    @keyframes lds-ellipsis3 {
+      0% {
+        transform: scale(1);
+      }
+      100% {
+        transform: scale(0);
+      }
+    }
+    @keyframes lds-ellipsis2 {
+      0% {
+        transform: translate(0, 0);
+      }
+      100% {
+        transform: translate(24px, 0);
+      }
+    }
+    
+
+
+.thankyou-wrapper{
+  width:100%;
+  height:auto;
+  margin:auto;
+  background:#ffffff; 
+  padding:10px 0px 50px;
+}
+.thankyou-wrapper h1{
+  font:100px Arial, Helvetica, sans-serif;
+  text-align:center;
+  color:#333333;
+  padding:0px 10px 10px;
+}
+.thankyou-wrapper p{
+  font:26px Arial, Helvetica, sans-serif;
+  text-align:center;
+  color:#333333;
+  padding:5px 10px 10px;
+}
+.thankyou-wrapper a{
+  font:26px Arial, Helvetica, sans-serif;
+  text-align:center;
+  color:#ffffff;
+  display:block;
+  text-decoration:none;
+  width:250px;
+  background:#E47425;
+  margin:10px auto 0px;
+  padding:15px 20px 15px;
+  border-bottom:5px solid #F96700;
+}
+.thankyou-wrapper a:hover{
+  font:26px Arial, Helvetica, sans-serif;
+  text-align:center;
+  color:#ffffff;
+  display:block;
+  text-decoration:none;
+  width:250px;
+  background:#F96700;
+  margin:10px auto 0px;
+  padding:15px 20px 15px;
+  border-bottom:5px solid #F96700;
+}
+
+.thankyou-wrapper img{
+  width: 100%;
+  margin: 50px auto 10px;
+}
+
+.thankyou-wrapper img{
+  width: 50%;
+}
 
 
 

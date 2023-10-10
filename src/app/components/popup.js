@@ -5,11 +5,9 @@ import Modal from 'react-modal'
 
 const popup = () => {
 
-    
-
     const [isOpen, setIsOpen] = useState(true)
    
-    console.log(isOpen)
+
 
 
     const customStyles = {
@@ -27,12 +25,9 @@ const popup = () => {
     }
 
   return (
-    <div style={{width:'500px'}}>
+    <div style={{width:'300px'}}>
          <button onClick={() => setIsOpen(true)}>Open Modal</button>
          <Modal isOpen={isOpen} onRequestClose={() => setIsOpen(false)} style={customStyles}>
-
-        
-
             <div className='modal-body'>
             <div className="modal-body">
   <div className="text-right">

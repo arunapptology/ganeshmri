@@ -8,8 +8,32 @@ import { useParams } from 'next/navigation'
 
 import Loading from '../../Loading';
 
+import Modal from 'react-modal'
+
+import Enquiry from '../../components/enquiry';
+
 
 const page = () => {
+
+  
+  const [isOpen, setIsOpen] = useState()
+
+
+  const customStyles = {
+    overlay: {
+      backgroundColor: 'rgba(0, 0, 0, 0.6)'
+    },
+    content: {
+      top: '50%',
+      left: '50%',
+      right: 'auto',
+      bottom: 'auto',
+      marginRight: '-50%',
+      transform: 'translate(-50%, -50%)',
+      padding:'0px'
+
+    }
+  }
 
 const params = useParams()
 
@@ -46,14 +70,11 @@ const param =  params.department;
   }, [])
 
 
-
-
   const departmentList  = departmentData??departmentData;
 
 
   return (
     <>
-
 
       <div id="breadcrumb" className="division">
         <div className="container">
@@ -64,7 +85,10 @@ const param =  params.department;
 
                 <nav aria-label="breadcrumb">
                   <ol className="breadcrumb">
-                    <li className="breadcrumb-item"><a href="index.html">Home</a></li>
+                    <li className="breadcrumb-item">
+                    <Link href="/">Home</Link>
+                 
+                      </li>
                     <li className="breadcrumb-item active" aria-current="page">Departments</li>
                   </ol>
                 </nav>
@@ -81,11 +105,9 @@ const param =  params.department;
 
       <div className='department-tabs' >
 
-
         <div className='container '>
           <div className='row'>
             <div className='col-md-4'>
-
 
               <div className='depat-tab-left-box'>
 
@@ -93,19 +115,12 @@ const param =  params.department;
                   <h3>Fillters</h3>
                 </div>
                 <div className='depat-tab-left'>
-
-
-
-
-
                   <div class="containerTab">
 
                     <div className='tabs-in-box'>
 
-
                       {
                       
-
                       isLoading ? <Loading /> :
                       
                       categoryList && categoryList.map((items, i) => (
@@ -186,9 +201,11 @@ const param =  params.department;
                               <strong> &#x20B9;{item.discountedPrice ? item.discountedPrice : null} </strong>
                             </td>
                             <td>
-                              <Link href={`/department-detail/${item.txtURL}`}>
-                                <button className='btn btn-sm custom-btn'> Book Now</button>
-                              </Link>
+                            
+                                <button
+                                 //onClick={() => setIsOpen({item , value:true})}  
+                                 className='btn btn-sm custom-btn'> Book Now</button>
+                             
                             </td>
    
 
@@ -216,6 +233,49 @@ const param =  params.department;
         </div>
 
       </div>
+
+
+
+
+
+
+
+
+  <div style={{ width: '300px' }}>
+  
+<Modal isOpen={isOpen} onRequestClose={() => setIsOpen(false)} style={customStyles}>
+  <div className='modal-body'>
+
+
+
+<div className='form-box '>
+
+<div id="hero-section-form" className="text-center  bg-white">
+    <div className="col-md-12 custom-form">
+        <h4 className="h4-xs">Book Now</h4>
+     
+    </div>
+
+  
+
+    <Enquiry params={isOpen&&isOpen.item}  />
+</div>
+
+</div>
+
+
+
+
+
+<button className='btn btn-danger' onClick={() => setIsOpen(false)}>Close</button>
+
+  </div>
+
+
+</Modal>
+</div>
+
+
     </>
 
   )

@@ -72,8 +72,20 @@ return (
 <>
 
 
+
 <header id="header" className="header">
+{/* <div className=" bg-blue clearfix hide-in-desktop">
+<div className="headerwp clearfix">
+<marquee>PET/CT Scanner now launched at Ganesh MRI Yamuna Vihar</marquee>
+</div>
+</div> */}
+
 <div className="wsmobileheader clearfix">
+
+
+<div className="headerwp clearfix hide-in-desktop">
+<marquee> 011-47-444-444, 011-47-333-333, +91-9811067479, +91-9810183948 info@ganeshdiagnostic.com</marquee>
+</div>
 
 
 
@@ -148,7 +160,7 @@ alt="mobile-logo" /></span>
 </div>
 
 </div>
-<div className="headtoppart bg-blue clearfix">
+<div className="headtoppart bg-blue clearfix hide-in-mobile">
 <div className="headerwp clearfix">
 <marquee>PET/CT Scanner now launched at Ganesh MRI Yamuna Vihar</marquee>
 </div>
@@ -157,10 +169,10 @@ alt="mobile-logo" /></span>
 <div className="wsmainwp clearfix">
 <div className="desktoplogo">
 <div className='row'>
-<div className='col-md-2'><a href="#hero-6">
+<div className='col-md-2'><Link href="/">
 <img src={`${process.env.BASE_URL}/images/logo-grey.png`} width="124" height="40"
 alt="header-logo" />
-</a>
+</Link>
 
 </div>
 <div className='col-md-6'>
@@ -305,7 +317,7 @@ alt="header-logo" />
 </div>
 </li>
 <li aria-haspopup="true">
-<a href="#">Other Services <span className="wsarrow"></span>
+<a >Other Services <span className="wsarrow"></span>
 </a>
 <div className="wsmegamenu clearfix">
 <div className="container">
@@ -316,7 +328,7 @@ alt="header-logo" />
 <li><Link href="/about"> About us </Link> </li>
 <li><Link href="/contact-us"> Contact us </Link> </li>
 <li><Link href="/health-packages"> health package </Link> </li>
-<li><a href="http://182.75.60.195/Download/PatientLogin.aspx"> Online Report </a> </li>
+<li><a target='_blank' href="http://182.75.60.195/Download/PatientLogin.aspx"> Online Report </a> </li>
 <li><Link href="/doctors"> Talk to doctors </Link> </li>
 
 
@@ -366,7 +378,7 @@ blogData && blogData.map((item, i) => (
 </div>
 </li>
 <li>
-<Link href={`http://182.75.60.195/Download/PatientLogin.aspx`}>
+<Link target='_blank' href={`http://182.75.60.195/Download/PatientLogin.aspx`}>
 <button className='btn custom-btn2'>online report </button>
 </Link></li>
 </ul>

@@ -1,6 +1,9 @@
 import React from 'react'
 
 const page = () => {
+
+
+
     return (
 
         <>
@@ -12,7 +15,7 @@ const page = () => {
                                     <ol className="breadcrumb">
                                         <li className="breadcrumb-item"><a href="index.html">Home</a></li>
                                         <li className="breadcrumb-item"><a href="all-doctors.html">Our Doctors</a></li>
-                                        <li className="breadcrumb-item active" aria-current="page">Doctor Page</li>
+                                        <li className="breadcrumb-item active" aria-current="page"></li>
                                     </ol>
                                 </nav>
 

@@ -15,8 +15,6 @@ const aboutdata = () => {
 	}, [])
 
   return (
-
-
     <div className="bottom-row">
     <div className="row d-flex align-items-center">
 

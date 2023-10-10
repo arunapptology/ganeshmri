@@ -1,5 +1,6 @@
 import dynamic from 'next/dynamic'
 import Loading from '../Loading';
+import Link from 'next/link';
 
    
 const DynamicAboutData = dynamic(() => import('./aboutdata'), {
@@ -31,7 +32,13 @@ const page = () => {
 
 								<nav aria-label="breadcrumb">
 									<ol className="breadcrumb">
-										<li className="breadcrumb-item"><a href="index.html">Home</a></li>
+										<li className="breadcrumb-item">
+											
+										<Link href="/">Home</Link>
+
+										
+											
+											</li>
 										<li className="breadcrumb-item active" aria-current="page">About Us</li>
 									</ol>
 								</nav>

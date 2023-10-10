@@ -2,6 +2,7 @@ import React from 'react'
 import dynamic from 'next/dynamic'
 import Loading from '../Loading';
 import Contactform from '../components/contactform'
+import Link from 'next/link';
 
 
 const DynamicBranches = dynamic(() => import('../components/branchesList'), {
@@ -23,7 +24,9 @@ const page = () => {
           <nav aria-label="breadcrumb">
             <ol className="breadcrumb">
               <li className="breadcrumb-item">
-                <a href="index.html">Home</a>
+              <Link href="/">Home</Link>
+
+            
               </li>
               <li className="breadcrumb-item active" aria-current="page">
                 Contact Us

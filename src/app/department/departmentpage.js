@@ -13,7 +13,7 @@ const departmentpage = ({ movieInfo }) => {
    <>
     {
     movieInfo && movieInfo.map((items) => (
-      <div className="col-md-6 col-lg-4">
+      <div className="col-md-6 col-lg-4 col-6">
         <div className="doctor-1">
           <div className="hover-overlay text-center">
 

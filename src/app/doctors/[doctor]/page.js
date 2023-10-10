@@ -1,4 +1,5 @@
 "use client"
+import Link from 'next/link'
 import React from 'react'
 
 const page = ({params}) => {
@@ -14,7 +15,8 @@ const page = ({params}) => {
             <nav aria-label="breadcrumb">
               <ol className="breadcrumb">
                 <li className="breadcrumb-item">
-                  <a href="index.html">Home</a>
+                <Link href="/">Home</Link> 
+
                 </li>
                 <li className="breadcrumb-item">
                   <a href="all-doctors.html">Our Doctors</a>

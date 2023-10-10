@@ -7,9 +7,9 @@ const nextConfig = {
 
     eslint: { 
         ignoreDuringBuilds: true
-     },
+     }, 
      env: {
-        BASE_URL: 'https://ganeshmri.com/',
+        BASE_URL: 'http://localhost:3000/',
       },
     async headers() {
         return [

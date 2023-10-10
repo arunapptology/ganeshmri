@@ -7,6 +7,7 @@ import { useSelector , useDispatch } from "react-redux";
 
 
 import dynamic from 'next/dynamic'
+import Link from 'next/link';
 const Cardboard = dynamic(() => import('./cardboard'), {
     ssr: false,
 })
@@ -31,7 +32,10 @@ const page = () => {
                             <div className=" breadcrumb-holder">
                                 <nav aria-label="breadcrumb">
                                     <ol className="breadcrumb">
-                                        <li className="breadcrumb-item"><a href="index.html">Home</a></li>
+                                        <li className="breadcrumb-item">
+                                        <Link href="/">Home</Link>
+
+                                            </li>
                                         
                                         <li className="breadcrumb-item active" aria-current="page">Health Packages</li>
                                     </ol>

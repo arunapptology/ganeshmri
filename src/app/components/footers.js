@@ -108,8 +108,8 @@ get to the correct diagnosis and initiate an appropriate treatment plan.
 								<h5 className="h5-xs">Discover</h5>
 
 								<ul className="clearfix">
-									<li><a href="#">Help Center</a></li>
-									<li><a href="#">Life Chatting</a></li>
+									{/* <li><a href="#">Help Center</a></li>
+									<li><a href="#">Life Chatting</a></li> */}
 									<li><a href="#">Terms & Privacy</a></li>
 									<li><a href="#">FAQs</a></li>
 									<li><a href="#">Site Map</a></li>
@@ -137,11 +137,13 @@ get to the correct diagnosis and initiate an appropriate treatment plan.
 											<div className="sbox-1 icon-md wow fadeInUp" data-wow-delay="0.6s">
 												<div className="sbox-1 icon-md wow fadeInUp" data-wow-delay="0.4s">
 
-										<span className="flaticon-137-doctor blue-color"></span>
+										
+												<span><img src={`${process.env.BASE_URL}images/direction.png`}/></span>
+
 
 												
 
-												<p className='small-tag'> <small>What's App
+												<p className='small-tag'> <small>Locate us
 											</small></p>
 												</div>
 											</div>
@@ -157,26 +159,32 @@ get to the correct diagnosis and initiate an appropriate treatment plan.
 											</small></p>
 											</div>
 										</Link></li>
-						<li><Link href={`/health-packages`} >
+					 
+	<li><Link 
+
+	href={`https://api.whatsapp.com/send?phone=8800846066&text=What is Beta-HCG Test in Pregnancy: Uses, Preparation, Procedure And Cost`}  target="_blank"><div className="sbox-1 icon-md wow fadeInUp" data-wow-delay="1s">
+
+	<span><img src={`${process.env.BASE_URL}images/whatsapp.png`}/></span>
+
+<p className='small-tag'> <small>Whats App
+</small>
+</p>
+</div>
+</Link></li>
+
+
+<li><Link tel href={`tel:+8800846066`} >
 											<div className="sbox-1 icon-md wow fadeInUp" data-wow-delay="0.8s">
 
-												<span className="flaticon-008-ambulance-6 blue-color"></span>
+												
+												<span><img src={`${process.env.BASE_URL}images/phone.png`}/></span>
+
 
 												
 												<p className='small-tag'> <small>Call us
 											</small></p>
 											</div>
 										</Link></li>
-						<li><Link href={`/doctors`}><div className="sbox-1 icon-md wow fadeInUp" data-wow-delay="1s">
-
-<span className="flaticon-083-stethoscope blue-color"></span>
-
-
-
-<p className='small-tag'> <small>Enquire Now
-											</small></p>
-</div>
-</Link></li>
 					</ul>
 				</div>
 

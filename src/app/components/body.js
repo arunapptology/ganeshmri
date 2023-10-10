@@ -103,6 +103,32 @@ const body = () => {
 
 
 
+
+	const optionstestimonial = {
+		margin: 10,
+		responsiveClass: true,
+
+		dots: false,
+		autoplay: true,
+		smartSpeed: 1000,
+		responsive: {
+			0: {
+				items: 1,
+			},
+			600: {
+				items: 2,
+			},
+			700: {
+				items: 3,
+			},
+			1000: {
+				items: 4,
+
+			}
+		},
+	};
+
+
 	const regex = /(<([^>]+)>)/gi
 
 
@@ -331,12 +357,12 @@ const body = () => {
 							<div className="video-preview mb-40 text-center wow fadeInUp" data-wow-delay="0.6s">
 
 
-								<a className="video-popup1" href="https://www.youtube.com/embed/SZEflIVnhH8">
+								<a className="video-popup1" href="https://www.youtube.com/watch?v=TupxIQh5ow8">
 
 
-									<div className="video-btn play-icon-blue">
+									<div className="video-btn">
 										<div className="video-block-wrapper">
-											<i className="fas fa-play"></i>
+											<img style={{width:'100px'}} src="https://static.vecteezy.com/system/resources/thumbnails/023/986/704/small/youtube-logo-youtube-logo-transparent-youtube-icon-transparent-free-free-png.png"/>
 										</div>
 									</div>
 
@@ -661,10 +687,7 @@ const body = () => {
 					<div className="row">
 						<div className="col-md-12">
 							<OwlCarousel
-								className="owl-theme"
-								loop
-								margin={10}
-								autoplay
+							{...optionstestimonial}
 							>
 								{
 
