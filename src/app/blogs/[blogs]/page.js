@@ -49,6 +49,17 @@ const page = ({ params }) => {
         setBlogDetails(data);
     }
 
+
+
+
+
+
+    
+
+
+
+
+
     useEffect(() => {
         fetchBlogs()
     }, [])
@@ -112,53 +123,53 @@ const page = ({ params }) => {
                                             <ul className="share-social-icons clearfix">
 
                                                 <span>  Shere :    <FacebookShareButton
-                                                    url={'https://github.com/next-share'}
-                                                    quote={'next-share is a social share buttons for your next React apps.'}
-                                                    hashtag={'#nextshare'}
+                                                    url={'http://localhost:3000/blogs/what-is-beta-hcg-test-in-pregnancy-uses-preparation-procedure-and-cost'}
+                                                    quote={blogDetail && blogDetail.txtName}
+                                                    hashtag={'#ganeshmri'}
                                                 >
                                                     <FacebookIcon size={50} />
                                                 </FacebookShareButton>
 
 
                                                     <WhatsappShareButton
-                                                        url={'https://github.com/next-share'}
-                                                        title={'next-share is a social share buttons for your next React apps.'}
+                                                        url={'http://localhost:3000/blogs/what-is-beta-hcg-test-in-pregnancy-uses-preparation-procedure-and-cost'}
+                                                        title={blogDetail && blogDetail.txtName}
                                                         separator=":: "
                                                     >
                                                         <WhatsappIcon size={50} />
                                                     </WhatsappShareButton>
 
                                                     <PinterestShareButton
-                                                        url={'https://github.com/next-share'}
-                                                        media={'next-share is a social share buttons for your next React apps.'}
+                                                        url={'http://localhost:3000/blogs/what-is-beta-hcg-test-in-pregnancy-uses-preparation-procedure-and-cost'}
+                                                        media={blogDetail && blogDetail.txtName}
                                                     >
                                                         <PinterestIcon size={50} />
                                                     </PinterestShareButton>
 
 
                                                     <TwitterShareButton
-                                                        url={'https://github.com/next-share'}
-                                                        title={'next-share is a social share buttons for your next React apps.'}
+                                                        url={'http://localhost:3000/blogs/what-is-beta-hcg-test-in-pregnancy-uses-preparation-procedure-and-cost'}
+                                                        title={blogDetail && blogDetail.txtName}
                                                     >
                                                         <TwitterIcon size={50} />
                                                     </TwitterShareButton>
 
 
-                                                    <LinkedinShareButton url={'https://github.com/next-share'}>
+                                                    <LinkedinShareButton url={'http://localhost:3000/blogs/what-is-beta-hcg-test-in-pregnancy-uses-preparation-procedure-and-cost'}>
                                                         <LinkedinIcon size={50} />
                                                     </LinkedinShareButton>
 
 
                                                     <TumblrShareButton
-                                                        url={'https://github.com/next-share'}
-                                                        title={'next-share is a social share buttons for your next React apps.'}
+                                                        url={'http://localhost:3000/blogs/what-is-beta-hcg-test-in-pregnancy-uses-preparation-procedure-and-cost'}
+                                                        title={blogDetail && blogDetail.txtName}
                                                     >
                                                         <TumblrIcon size={50} />
                                                     </TumblrShareButton>
 
                                                     <TelegramShareButton
-                                                        url={'https://github.com/next-share'}
-                                                        title={'next-share is a social share buttons for your next React apps.'}
+                                                        url={'http://localhost:3000/blogs/what-is-beta-hcg-test-in-pregnancy-uses-preparation-procedure-and-cost'}
+                                                        title={blogDetail && blogDetail.txtName}
                                                     >
                                                         <TelegramIcon size={50} />
                                                     </TelegramShareButton>
@@ -166,8 +177,8 @@ const page = ({ params }) => {
 
 
                                                     <RedditShareButton
-                                                        url={'https://github.com/next-share'}
-                                                        title={'next-share is a social share buttons for your next React apps.'}
+                                                        url={'http://localhost:3000/blogs/what-is-beta-hcg-test-in-pregnancy-uses-preparation-procedure-and-cost'}
+                                                        title={blogDetail && blogDetail.txtName}
                                                     >
                                                         <RedditIcon size={50} />
                                                     </RedditShareButton>

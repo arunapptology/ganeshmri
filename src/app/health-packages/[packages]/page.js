@@ -1,9 +1,29 @@
-import React from 'react'
+"use client"
+import React, { useState , useEffect } from 'react'
+import { useParams } from 'next/navigation'
 
 const page = () => {
 
+  const params = useParams()
+
+  const param =  params.packages; 
+
+  
+  const [packSingle, setPackSingle] = useState(null);
+
+  const fetchPackage = async () => {
+    const response = await fetch(`https://admin.ganeshparamedicalcollege.com/api/packagesSingle/${param}`)
+    const data = await response.json();
+    setPackSingle(data);
+  }
 
 
+  useEffect(()=>{
+    fetchPackage();
+  },[])
+
+  console.log(packSingle);
+  
     return (
 
         <>
@@ -14,13 +34,13 @@ const page = () => {
                                 <nav aria-label="breadcrumb">
                                     <ol className="breadcrumb">
                                         <li className="breadcrumb-item"><a href="index.html">Home</a></li>
-                                        <li className="breadcrumb-item"><a href="all-doctors.html">Our Doctors</a></li>
-                                        <li className="breadcrumb-item active" aria-current="page"></li>
+                                       
+                                        <li className="breadcrumb-item active" aria-current="page">Health Package</li>
                                     </ol>
                                 </nav>
 
 
-                                <h4 className="h4-sm steelblue-color">Health Packages list</h4>
+                                <h4 className="h4-sm steelblue-color"> {packSingle&&packSingle.txtName}</h4>
 
                             </div>
                         
@@ -32,9 +52,9 @@ const page = () => {
             <div className="step-div cart-sec row">
   <div className="col-md-7 col-sm-7 col-xs-12">
     <h1 id="product_name">
-      Malaria Parasite Detection By Smear Examination in Gurgaon
+      {packSingle&&packSingle.txtName}
     </h1>
-    <h2 className="also_known_as">Smear Examination for MP</h2>
+ 
     <p className="parameterinc">
       Parameter Included: <b>1</b>
     </p>
@@ -43,11 +63,11 @@ const page = () => {
   <div className="col-md-5 col-sm-5 col-xs-12 text-right hpriceright">
     <div className="price">
        Price: <span className="rupeesign">₹</span>
-      <strike>498/-</strike>
+      <strike>{packSingle&&packSingle.txtDiscountedPrice}/-</strike>
     </div>
     <h2 className="ltoffer">
       Offer price: <span className="rupeesign">₹</span>
-      398/- 
+      {packSingle&&packSingle.txtMRP}/- 
     </h2>
     <div className="bookexclusive">
       <a
@@ -69,6 +89,64 @@ const page = () => {
 </div>
 
 </div>
+
+
+
+<section
+  id="doctor-2-details"
+  className="wide-custom doctor-details-section division"
+>
+  <div className="container">
+    <div className="row">
+      {/* DOCTOR PHOTO */}
+      <div className="col-md-4 col-xl-4">
+        <div className="doctor-photo mb-30 text-center">
+          {/* Photo */}
+          <img
+            className="img-fluid"
+            src={`${packSingle&&packSingle.imageurl}/${packSingle&&packSingle.txtBnrDsktp}`}
+            alt="doctor-foto"
+          />
+          {/* Text */}
+          <div class="doctor-bio">
+          <br/>
+            <h4 class="text-right"><span>{packSingle&&packSingle.txtName}</span></h4>
+          
+            <ul class="price-btn-right">
+             
+             <li><button class="btn custom-btn blue-hover">Add to cart</button></li>
+             <li><button class="btn  btn-blue blue-hover font-bold">Buy Now</button></li>
+             </ul>
+            <span class="font-bold text-right text-danger">₹ 4500  </span>
+            <span class="font-bold text-right"><s>₹ 9000   </s></span>
+            <br/>
+            <br/>
+            <hr />
+           
+              
+              
+              </div>
+       
+        
+        </div>
+      </div>{" "}
+      {/* END DOCTOR PHOTO */}
+      {/* DOCTOR'S BIO */}
+      <div className="col-md-8 col-xl-8">
+        <div className="doctor-bio">
+        
+        <div dangerouslySetInnerHTML={{ __html: packSingle && packSingle.txtDescription }}></div>
+          
+        
+        </div>
+      </div>{" "}
+      {/* END DOCTOR BIO */}
+    </div>{" "}
+    {/* End row */}
+  </div>{" "}
+  {/* End container */}
+</section>
+
   
         </>
     )

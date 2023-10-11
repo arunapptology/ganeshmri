@@ -46,6 +46,12 @@ export const postApis = createApi({
             query: (slug) => `packages/${slug}`,
         }),
 
+        getPackageSingleResult: builder.query({
+            query: (slug) => `packagesSingle/${slug}`,
+        }),
+
+
+    
         getTestimonialResult: builder.query({
             query: () => `testimonial`,
         }),
@@ -73,5 +79,6 @@ export const {
     useGetPackageResultQuery,
     useGetCategoryLimitDataQuery,
     useGetTestimonialResultQuery,
-    useGetStaticpagesResultQuery
+    useGetStaticpagesResultQuery,
+    useGetPackageSingleResultQuery
 } = postApis;

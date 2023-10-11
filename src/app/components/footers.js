@@ -171,21 +171,16 @@ get to the correct diagnosis and initiate an appropriate treatment plan.
 </p>
 </div>
 </Link></li>
-
+  
 
 <li><Link tel href={`tel:+9811067479`} >
 											<div className="sbox-1 icon-md wow fadeInUp" data-wow-delay="0.8s">
-
-												
 												<span><img src={`${process.env.BASE_URL}images/phone.png`}/></span>
-
-
-												
 												<p className='small-tag'> <small>Call us
 											</small></p>
 											</div>
 										</Link></li>
-					</ul>
+					</ul> 
 				</div>
 
 			</div>

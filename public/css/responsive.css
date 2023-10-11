@@ -1551,7 +1551,7 @@
   p.p-xl { font-size: 1.1785rem; }   
 
   /* Button */
-  .btn, .btn.btn-sm, .btn.btn-md { font-size: 1.1075rem; padding: 14px 30px; }
+  .btn, .btn.btn-sm, .btn.btn-md { font-size: 1.1075rem; padding: 5px 10px; }
 
   /* Box List */
   .box-list p.p-sm { font-size: 1.1075rem; }
@@ -1951,7 +1951,7 @@
   .footer p.p-sm.mt-20 { margin-top: 15px; }
   p.contact-notice { padding-right: 0; margin-top: 0; margin-bottom: 40px; }
 
-  .foo-socials a { width: 50px; height: 50px; font-size: 20px; line-height: 46px!important; }
+  .foo-socials a { width: 40px; height: 40px; font-size: 20px; line-height: 46px!important; }
   .footer-form .form-control { height: 54px; font-size: 1.1075rem; }
   .footer-form .btn { height: 54px; font-size: 1.5rem; }
 

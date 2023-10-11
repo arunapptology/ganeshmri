@@ -84,7 +84,7 @@ return (
 
 
 <div className="headerwp clearfix hide-in-desktop">
-<marquee> 011-47-444-444, 011-47-333-333, +91-9811067479, +91-9810183948 info@ganeshdiagnostic.com</marquee>
+<marquee> 011-47-444-444, 011-47-333-333, +91-9811067479, +91-9810183948 </marquee>
 </div>
 
 
