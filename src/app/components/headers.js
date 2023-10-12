@@ -188,8 +188,8 @@ alt="header-logo" />
 </div>
 <div className='col-md-4 right-head-sec'>
 <ul>
-<li>
-<Link href={`/dactors`}><button className="btn custom-btn3">Talk to doctor </button></Link>
+<li>  
+<Link href={`/doctors`}><button className="btn custom-btn3">Talk to doctor </button></Link>
 </li>
 <li className="y5khq1DT"><a className="R0yMSq_u _uPYWdBx" data-test-selector="pageheader-user-auth-link" href="/sign-in">
 <img src={`${process.env.BASE_URL}/images/user.png`} />
