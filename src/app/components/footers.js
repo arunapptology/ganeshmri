@@ -162,7 +162,7 @@ get to the correct diagnosis and initiate an appropriate treatment plan.
 					 
 	<li><Link 
 
-	href={`https://api.whatsapp.com/send?phone=9811067479&text=What is Beta-HCG Test in Pregnancy: Uses, Preparation, Procedure And Cost`}  target="_blank"><div className="sbox-1 icon-md wow fadeInUp" data-wow-delay="1s">
+	href={`https://api.whatsapp.com/send?phone=9811067479&text=ganeshmri`}  target="_blank"><div className="sbox-1 icon-md wow fadeInUp" data-wow-delay="1s">
 
 	<span><img src={`${process.env.BASE_URL}images/whatsapp.png`}/></span>
 

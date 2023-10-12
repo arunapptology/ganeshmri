@@ -46,13 +46,13 @@ const page = () => {
 							<Link href={`/doctors/${name}`}>
 							<div className="doctor-2">
 								<div className="hover-overlay">
-									<img className="img-fluid" src="images/doctor-1.jpg" alt="doctor-foto" />
+									<img className="img-fluid" src={`${process.env.BASE_URL}images/ravin.jpg`}  alt="doctor-foto" />
 								</div>
 
 								<div className="doctor-meta">
 
-									<h5 className="h5-xs blue-color">Jonathan Barnes D.M.</h5>
-									<span>Chief Medical Officer</span>
+									<h5 className="h5-xs blue-color">Dr. Ravin Sharma</h5>
+									<span>MBBS, MD Senior Consultant Radiologist (Director)</span>
 
 									<a className="btn btn-sm btn-blue blue-hover mt-15" href="doctor-1.html" title="">View More Info</a>
 
@@ -67,88 +67,13 @@ const page = () => {
 
 
 
-						<div className="col-md-6 col-lg-3">
-
-
-<Link href={`/doctors/${name}`}>
-<div className="doctor-2">
-	<div className="hover-overlay">
-		<img className="img-fluid" src="images/doctor-1.jpg" alt="doctor-foto" />
-	</div>
-
-	<div className="doctor-meta">
-
-		<h5 className="h5-xs blue-color">Jonathan Barnes D.M.</h5>
-		<span>Chief Medical Officer</span>
-
-		<a className="btn btn-sm btn-blue blue-hover mt-15" href="doctor-1.html" title="">View More Info</a>
-
-	</div>
-
-</div>
-
-</Link>
-
-
-</div>
-<div className="col-md-6 col-lg-3">
-
-
-<Link href={`/doctors/${name}`}>
-<div className="doctor-2">
-	<div className="hover-overlay">
-		<img className="img-fluid" src="images/doctor-1.jpg" alt="doctor-foto" />
-	</div>
-
-	<div className="doctor-meta">
-
-		<h5 className="h5-xs blue-color">Jonathan Barnes D.M.</h5>
-		<span>Chief Medical Officer</span>
-
-		<a className="btn btn-sm btn-blue blue-hover mt-15" href="doctor-1.html" title="">View More Info</a>
-
-	</div>
-
-</div>
-
-</Link>
-
-
-</div>
-
-<div className="col-md-6 col-lg-3">
-
-
-<Link href={`/doctors/${name}`}>
-<div className="doctor-2">
-	<div className="hover-overlay">
-		<img className="img-fluid" src="images/doctor-1.jpg" alt="doctor-foto" />
-	</div>
-
-	<div className="doctor-meta">
-
-		<h5 className="h5-xs blue-color">Jonathan Barnes D.M.</h5>
-		<span>Chief Medical Officer</span>
-
-		<a className="btn btn-sm btn-blue blue-hover mt-15" href="doctor-1.html" title="">View More Info</a>
-
-	</div>
-
-</div>
-
-</Link>
-
-
-</div>
-
-
 					</div>
 				</div>
 			</section>
 
 
 
-			<section id="reviews-2" className="bg-lightgrey wide-100 reviews-section division">
+			{/* <section id="reviews-2" className="bg-lightgrey wide-100 reviews-section division">
 				<div className="container">
 
 
@@ -404,7 +329,7 @@ const page = () => {
 						</div>
 					</div>
 				</div>
-			</section>
+			</section> */}
 		</>
 	)
 }
