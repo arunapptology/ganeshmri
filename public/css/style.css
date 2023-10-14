@@ -6636,14 +6636,15 @@ a{
 .menu-item:hover .drop-menu {
   display: block;
   float: left !important;
-  right: -109px !important;
-  padding: 10px 20px !important;
+  right: -109px ;
+  padding: 10px 20px ;
   border-radius: 3px !important;
   box-shadow: 3px 3px 5px -3px #9d9d9d !important;
   z-index: 999 !important;
   width: 600px;
 
-
+  border-top: 2px solid #ff000070;
+  margin-top: 1px;
 
 }
 
@@ -6655,6 +6656,15 @@ a{
 .cart-list-ul li{
 display: inline-block;
 
+}
+
+
+.login-list-ul{
+
+  right: -60px !important;
+  width: 150px !important;
+  padding: 10px !important;
+  margin-top: 1px;
 }
 
 .cart-list-ul li img {
@@ -6738,7 +6748,9 @@ display: inline-block;
 ::-webkit-scrollbar-thumb:hover {
   background: #555; 
 }
-
+.row{
+  width: 100%;
+}
 
 .department-tabs .row{
   margin: 20px;

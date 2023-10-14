@@ -191,10 +191,74 @@ alt="header-logo" />
 <li>  
 <Link href={`/doctors`}><button className="btn custom-btn3">Talk to doctor </button></Link>
 </li>
-<li className="y5khq1DT"><a className="R0yMSq_u _uPYWdBx" data-test-selector="pageheader-user-auth-link" href="/sign-in">
+
+
+
+
+
+
+
+
+
+
+
+
+<li className='cart-wrap y5khq1DT'>
+<div className="menu-wrap">
+<ul className="menu">
+{/* <li className="menu-item">
+<a className="R0yMSq_u _uPYWdBx" data-test-selector="pageheader-user-auth-link" href="/sign-in">
 <img src={`${process.env.BASE_URL}/images/user.png`} />
 <span className='text-login'>Sign In</span>
-</a></li>
+</a>
+<ul className="drop-menu">
+<li className="drop-menu-item">
+<h1>wfiwqehfip</h1>
+</li>
+</ul>
+</li> */}
+
+<li className="menu-item">
+<text className="cart-active">
+<img src={`${process.env.BASE_URL}/images/user.png`} />
+<span className='text-login'>Sign In</span>
+</text>
+<ul className="drop-menu login-list-ul ">
+<li className="drop-menu-item">
+  <p><img src={`${process.env.BASE_URL}/images/profile.png`} /> Profile</p>
+  <p> <img src={`${process.env.BASE_URL}/images/power.png`} /> Logout </p>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <li className='cart-wrap'>
 <div className="menu-wrap">
 <ul className="menu">
@@ -256,7 +320,8 @@ alt="header-logo" />
 </ul>
 </li>
 </ul>
-</div></li>
+</div>
+</li>
 </ul>
 </div>
 </div>
@@ -316,6 +381,8 @@ alt="header-logo" />
 </div>
 </div>
 </li>
+
+
 <li aria-haspopup="true">
 <a >Other Services <span className="wsarrow"></span>
 </a>

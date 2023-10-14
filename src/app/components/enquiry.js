@@ -35,6 +35,8 @@ const enquiry = ({params}) => {
 
       setHiddenPrice(data.price)
       setHiddenSlug(data.txtURL)
+
+      console.log(data);
   }
 
 
