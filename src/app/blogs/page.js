@@ -1,4 +1,5 @@
 "use client"
+import Head from 'next/head';
 import Link from 'next/link';
 import React, { useEffect, useState } from 'react'
   
@@ -14,6 +15,8 @@ const page = () => {
     }
 
 
+    console.log(blogs);
+
 
     useEffect(() => {
 
@@ -27,7 +30,18 @@ const page = () => {
 
    
     return (
+
+       
         <div>
+
+<title>My page title</title>
+<meta property="og:title" content="My page title" key="title" />
+<meta
+  name="description"
+  content="Check out iPhone 12 XR Pro and iPhone 12 Pro Max. Visit your local store and for expert advice."
+/>
+
+{/*  */}
             <div id="breadcrumb" className="division">
                 <div className="container">
              

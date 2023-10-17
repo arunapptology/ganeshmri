@@ -22,7 +22,7 @@ import Footers from './components/footers';
 
 import { Providers } from "./redux/provider";
 
-
+import GoogleTrackingCode from './GoogleTrackingCode';
 
 <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200;0,6..12,300;0,6..12,400;0,6..12,500;0,6..12,600;0,6..12,700;0,6..12,800;1,6..12,200;1,6..12,300;1,6..12,400;1,6..12,500;1,6..12,600;1,6..12,700&family=Open+Sans:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap" rel="stylesheet"></link>
 
@@ -36,12 +36,7 @@ const corsOptions ={
    optionSuccessStatus:200,
 }
 
-export const metadata = {
-	title: {
-	  template: 'Ganesh MRI',
-	  default: 'Ganesh MRI',
-	},
-  }
+
 
 export default function RootLayout({ children }) {
 
@@ -49,6 +44,7 @@ export default function RootLayout({ children }) {
 
   return (
     <html lang="en">
+		<GoogleTrackingCode />
 
       <Script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></Script>
 
