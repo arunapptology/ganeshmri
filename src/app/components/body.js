@@ -53,8 +53,9 @@ const body = () => {
 	const [banner, setBanner] = useState(null);
 
 	const { data: testimonialData } = useGetTestimonialResultQuery();
-	const { data: staticPages } = useGetStaticpagesResultQuery();
+	const { data: staticPages } = useGetStaticpagesResultQuery('home');
 
+	console.log(staticPages);
 
 	const fetchBanner = async () => {
 		const response = await fetch('https://admin.ganeshparamedicalcollege.com/api/banner')
@@ -142,15 +143,9 @@ const body = () => {
 	return (
 		<>
 
-<Head>
-
-<title>Ganesh MRI</title>
-<meta name="description" content="ewgfweg,ew gkjw we mgweg" />
-<link rel="canonical" href="wiqhfiowqhfewf" ></link>
-
-</Head>
-
-
+<title>{`${staticPages.txtPageMetaTitle}`}</title>
+<meta name="description" content={`${staticPages.txtPageMetaDescription}`} />
+<link rel="canonical" href={staticPages.txtPageCanonicalURL} ></link>
 
 			<section id="hero-4" className="bg-fixed hero-section division" style={{ height: "450px" }}>
 				<div className="container">

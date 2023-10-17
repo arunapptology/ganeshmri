@@ -58,8 +58,9 @@ export const postApis = createApi({
 
 
         getStaticpagesResult: builder.query({
-            query: () => `staticpages`,
+            query: (pagename) => `staticpages/${pagename}`,
         }),
+
 
 
 

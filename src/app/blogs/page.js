@@ -3,6 +3,8 @@ import Head from 'next/head';
 import Link from 'next/link';
 import React, { useEffect, useState } from 'react'
   
+import { useGetStaticpagesResultQuery } from '../redux/services/postApis';
+
   
 const page = () => {
 
@@ -27,19 +29,18 @@ const page = () => {
 
     const regex = /(<([^>]+)>)/gi
 
+	const { data: staticPages } = useGetStaticpagesResultQuery('blogs');
 
+    console.log(staticPages);
    
     return (
 
-       
+              
         <div>
 
-<title>My page title</title>
-<meta property="og:title" content="My page title" key="title" />
-<meta
-  name="description"
-  content="Check out iPhone 12 XR Pro and iPhone 12 Pro Max. Visit your local store and for expert advice."
-/>
+<title>{`${staticPages.txtPageMetaTitle}`}</title>
+<meta name="description" content={`${staticPages.txtPageMetaDescription}`} />
+<link rel="canonical" href={staticPages.txtPageCanonicalURL} ></link>
 
 {/*  */}
             <div id="breadcrumb" className="division">
