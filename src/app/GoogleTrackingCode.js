@@ -6,7 +6,7 @@ const GoogleTrackingCode = () => {
     <>
 
 {/* Global site tag (gtag.js) - Google Analytics */}
-<Script src="https://www.googletagmanager.com/gtag/js?id=G-PRBF8ZEVYX" />
+{/* <Script src="https://www.googletagmanager.com/gtag/js?id=G-PRBF8ZEVYX" />
       <Script id="google-analytics" strategy="afterInteractive">
         {`
           window.dataLayer = window.dataLayer || [];
@@ -15,7 +15,7 @@ const GoogleTrackingCode = () => {
         
           gtag('config', 'G-PRBF8ZEVYX');
         `}
-      </Script>
+      </Script> */}
 
     </>
   )
