@@ -1,18 +1,15 @@
 "use client"
 import React, { useEffect, useState , Suspense  } from 'react'
 
+
+import { useGetStaticpagesResultQuery } from '../redux/services/postApis';
+
+
 const aboutdata = () => {
-	const [about, fetchAbout] = useState();
 
-	const fetchabout = async () => {
-		const response = await fetch('https://admin.ganeshparamedicalcollege.com/api/pages/about-us')
-		const data = await response.json();
-		fetchAbout(data);
-	}
+    const { data: about } = useGetStaticpagesResultQuery('about-us');
 
-	useEffect(() => {
-		fetchabout()
-	}, [])
+    console.log(about);
 
   return (
     <div className="bottom-row">

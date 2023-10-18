@@ -143,9 +143,9 @@ const body = () => {
 	return (
 		<>
 
-<title>{`${staticPages.txtPageMetaTitle}`}</title>
-<meta name="description" content={`${staticPages.txtPageMetaDescription}`} />
-<link rel="canonical" href={staticPages.txtPageCanonicalURL} ></link>
+<title>{`${staticPages&&staticPages.txtPageMetaTitle}`}</title>
+<meta name="description" content={`${staticPages&&staticPages.txtPageMetaDescription}`} />
+<link rel="canonical" href={staticPages&&staticPages.txtPageCanonicalURL} ></link>
 
 			<section id="hero-4" className="bg-fixed hero-section division" style={{ height: "450px" }}>
 				<div className="container">

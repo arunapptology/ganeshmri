@@ -38,9 +38,9 @@ const page = () => {
               
         <div>
 
-<title>{`${staticPages.txtPageMetaTitle}`}</title>
-<meta name="description" content={`${staticPages.txtPageMetaDescription}`} />
-<link rel="canonical" href={staticPages.txtPageCanonicalURL} ></link>
+<title>{`${staticPages&&staticPages.txtPageMetaTitle}`}</title>
+<meta name="description" content={`${staticPages&&staticPages.txtPageMetaDescription}`} />
+<link rel="canonical" href={staticPages&&staticPages.txtPageCanonicalURL} ></link>
 
 {/*  */}
             <div id="breadcrumb" className="division">
