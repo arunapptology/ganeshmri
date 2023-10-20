@@ -4,12 +4,13 @@
 
 const webpack = require("webpack");
 const nextConfig = {
-
+ 
     eslint: { 
         ignoreDuringBuilds: true
-     }, 
+     },  
      env: {
         BASE_URL: 'https://www.ganeshmri.com/',
+        NEXT_PUBLIC_GA_ID:'G-PRBF8ZEVYX',
       },
     async headers() {
         return [

@@ -35,21 +35,37 @@ const corsOptions ={
    optionSuccessStatus:200,
 }
 
+export const GA_TRACKING_ID = process.env.NEXT_PUBLIC_GA_ID;
   
 
 export default function RootLayout({ children }) {
 
-	
+
+	<Script strategy="lazyOnload" dangerouslySetInnerHTML={{ __html: ` window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', '${process.env.GA_TRACKING_ID}')`, }} />
+
+  
 
   return (
-    <html lang="en">
+    <html lang="en">  
 <meta name="google-site-verification" content="1UCRZ2WUmjmKopZiF9nn9JQ1tlHXOaYGTSxLcvB5H1c" />
-		<GoogleTagManager />
+
+
+	
 
       <Script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></Script>
 
 
       <body className='backgroundBanner'>
+
+	  <noscript
+    dangerouslySetInnerHTML={{
+      __html: `<iframe src="https://www.googletagmanager.com/gtag/js?id=${process.env.GA_TRACKING_ID}" height="0" width="0" style="display: none; visibility: hidden;" />`,
+    }}
+  />
 
 	  <div id="page" className="page">
 	  <Providers>
