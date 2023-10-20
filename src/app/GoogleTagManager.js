@@ -6,9 +6,6 @@ const GoogleTagManager = () => {
   return (
     <>
 
-
-
-
       <Script id="google-analytics">
         {`
           window.dataLayer = window.dataLayer || [];
