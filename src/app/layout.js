@@ -25,6 +25,7 @@ import { Providers } from "./redux/provider";
 <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200;0,6..12,300;0,6..12,400;0,6..12,500;0,6..12,600;0,6..12,700;0,6..12,800;1,6..12,200;1,6..12,300;1,6..12,400;1,6..12,500;1,6..12,600;1,6..12,700&family=Open+Sans:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap" rel="stylesheet"></link>
 
 
+
 import GoogleTagManager from './GoogleTagManager';
 
 const cors=require("cors");
@@ -34,14 +35,15 @@ const corsOptions ={
    optionSuccessStatus:200,
 }
 
-
+  
 
 export default function RootLayout({ children }) {
 
-  
+	
 
   return (
     <html lang="en">
+<meta name="google-site-verification" content="1UCRZ2WUmjmKopZiF9nn9JQ1tlHXOaYGTSxLcvB5H1c" />
 		<GoogleTagManager />
 
       <Script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></Script>
@@ -61,9 +63,6 @@ export default function RootLayout({ children }) {
 
 </div>
 		</body>
-
-		<Script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></Script>
-
 		<Script src={`${process.env.BASE_URL}js/customfunction.js`}></Script>
   
   <Script src={`${process.env.BASE_URL}js/jquery-3.3.1.min.js`}></Script>
